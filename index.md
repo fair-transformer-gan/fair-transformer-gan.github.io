@@ -9,7 +9,7 @@ As the use of AI and other machine learning models becomes more prevalent in our
 
 Machine learning(ML) models are not limited to just entertainment; they can be used to make serious life decisions, such as predicting recidivism, medical-delivery priorities, mortgage loans, or career progressions. At the end of the day, biased data leads to biased models.
 
-This project aims to solve the problem and started as a UC Berkeley capstone, to generate a synthetic training data that will mitigate racial, gender or other forms of bias in datasets. We attempted to solve the problem by Generative Advesarial Network(GAN) transfomer architecture with a discirminator, classfiried and three generators.
+This project aims to solve the problem and started as a UC Berkeley capstone, to generate a synthetic training data that will mitigate racial, gender or other forms of bias in datasets. We attempted to solve the problem by Generative Advesarial Network(GAN) transfomer architecture with three discirminator, one classifier and one generator.
 
 ### Installing
 
