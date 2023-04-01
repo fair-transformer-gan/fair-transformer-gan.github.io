@@ -19,15 +19,4 @@ broadened this GAN architecture to be applicable on more complex tabular dataset
 Add more on Architecture
 
 
-#### Team
-Eric (Yue) Ling
-Krutika Ingale
-Michael Chu
-Tanya Flint
-
-#### Advisors
-Joyce Shen
-Fred Nugen
-
-
 [FairGAN+: Achieving Fair Data Generation and Classification through Generative Adversarial Nets]: https://ieeexplore.ieee.org/abstract/document/9006322?casa_token=rtdWVzSgLKoAAAAA:AMi_jcLYpcU-evETPjOU7z-NF7W6NVOBczeq01sPpEIzl8V_XcwMYeTqabxFM2AOwCYt2VA
