@@ -1,7 +1,7 @@
 ---
 layout: default
-title: Metrics
+title: Model
 parent: API
-nav_order: 3
+nav_order: 2
 ---
 

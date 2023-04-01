@@ -5,10 +5,10 @@ nav_order: 3
 has_children: true
 ---
 
-# API
+## API
 
 ### This is a description of the API
 
-Dataset
-Model
-Metrics
+[Dataset](/docs/dataset.md)
+[Model](/docs/model.md)
+[Metrics](/docs/metrics.md)
