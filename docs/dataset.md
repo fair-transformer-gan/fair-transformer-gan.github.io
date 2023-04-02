@@ -9,19 +9,19 @@ nav_order: 1
 
 | Function     | Descriptioin      |
 |:-------------|:------------------|
-| `pre_process`| This step is optional and does a couple simple pre-processing check and adjustments, such as scaling, checking for nulls, setting protected and target columns |
-| `post_process` | Run on generated dataset to inverse scaling |
-| `get_protected_distribution`           | Gets protected variable distribution from the dataset |
-| `get_target_distribution`           | Gets target variable distribution from the dataset |
+| [`pre_process`](#datasetdatasetpre_process)| This step is optional and does a couple simple pre-processing check and adjustments, such as scaling, checking for nulls, setting protected and target columns |
+| [`post_process`](#datasetdatasetpost_process) | Run on generated dataset to inverse scaling |
+| [`get_protected_distribution`](#datasetdatasetget_protected_distribution)           | Gets protected variable distribution from the dataset |
+| [`get_target_distribution`](#datasetdatasetget_target_distribution)           | Gets target variable distribution from the dataset |
 
 
-#### dataset.Dataset
+### dataset.Dataset
 {: .note-title }
 > CLASS
 >
 > `dataset.Dataset.pre_process`(protected_col_name, y_col_name, output_file_name, multiclass=False, min_max_scale=True)
 
-Basic pre-processing stepd on a Pandas DataFrame.
+Basic pre-processing on a Pandas DataFrame.
 
 {: .important-title }
 > Parameters
@@ -41,3 +41,78 @@ Basic pre-processing stepd on a Pandas DataFrame.
 > Return type
 
 Numpy array with pre-processed data
+
+
+
+### dataset.Dataset.post_process
+{: .note-title }
+> CLASS
+>
+> `dataset.Dataset.post_process`(gen_data_np)
+
+Iverse scaling on the generated dataset.
+
+{: .important-title }
+> Parameters
+
+- **gen_data_np** [np.ndarray] - Numpy array with generated data.
+
+{: .important-title }
+> Return type
+
+Numpy array with post-processed data
+
+### dataset.Dataset.get_protected_distribution
+{: .note-title }
+> CLASS
+>
+> `dataset.Dataset.get_protected_distribution`
+
+Returns the protected variable distribution after pre-processing. 
+
+{: .important-title }
+> Parameters
+
+`None`
+
+{: .important-title }
+> Return type
+
+`List[float]` - distrbution of each protected class
+
+To get the dataframe columns corresponding to class names, run `protected_names` on the Dataset object. For example
+
+```
+dataset = Dataset()
+dataset.pre_process(df, 'gender', 'income', 'out_file')
+
+dataset.get_protected_distribution()
+
+>>> [85.6, 14.4]
+
+dataset.protected_names
+
+>>> ['Male', 'Female']
+
+```
+
+
+### dataset.Dataset.get_target_distribution
+{: .note-title }
+> CLASS
+>
+> `dataset.Dataset.get_target_distribution`
+
+Returns the target variable distribution after pre-processing. 
+
+{: .important-title }
+> Parameters
+
+`None`
+
+{: .important-title }
+> Return type
+
+`List[float]` - distrbution of each target class
+
+To get the dataframe columns corresponding to class names, return `target_names` on the Dataset object.
