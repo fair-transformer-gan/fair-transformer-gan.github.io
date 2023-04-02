@@ -19,6 +19,13 @@ nav_order: 1
 {: .note-title }
 > CLASS
 >
+> `dataset.Dataset`()
+
+
+### dataset.Dataset.pre_process
+{: .note-title }
+> Method
+>
 > `dataset.Dataset.pre_process`(protected_col_name, y_col_name, output_file_name, multiclass=False, min_max_scale=True)
 
 Basic pre-processing on a Pandas DataFrame.
@@ -46,7 +53,7 @@ Numpy array with pre-processed data
 
 ### dataset.Dataset.post_process
 {: .note-title }
-> CLASS
+> Method
 >
 > `dataset.Dataset.post_process`(gen_data_np)
 
@@ -64,7 +71,7 @@ Numpy array with post-processed data
 
 ### dataset.Dataset.get_protected_distribution
 {: .note-title }
-> CLASS
+> Method
 >
 > `dataset.Dataset.get_protected_distribution`
 
@@ -99,7 +106,7 @@ dataset.protected_names
 
 ### dataset.Dataset.get_target_distribution
 {: .note-title }
-> CLASS
+> Method
 >
 > `dataset.Dataset.get_target_distribution`
 
