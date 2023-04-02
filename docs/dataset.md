@@ -19,15 +19,25 @@ nav_order: 1
 {: .note-title }
 > CLASS
 >
-> `dataset.Dataset.pre_process`(protected_col_name, y_col_name, output_file_name, multiclass=False, MinMaxScale=True)
+> `dataset.Dataset.pre_process`(protected_col_name, y_col_name, output_file_name, multiclass=False, min_max_scale=True)
 
 Basic pre-processing stepd on a Pandas DataFrame.
 
-{: .important }
+{: .important-title }
 > Parameters
 
-- protected_col_name
-- y_col_name
-- output_file_name
-- multiclass
-- MinMaxScale
+- **protected_col_name** [str] - Name of the protected column in the Pandas DataFrame
+- **y_col_name** [str] - Name of the target column in the Pandas DataFrame
+- **output_file_name** [str] - Name the Pickle file that will be saved in the data/interim folder
+- **multiclass** (Optional [bool]) - Set to True if your protected variable is categorical has more than two states.
+- **min_max_scale** (Optional [bool]) - Set to False if using scaled data
+
+{: .important-title }
+> Raises
+
+**Exception** - if dataset has nulls
+
+{: .important-title }
+> Return type
+
+Numpy array with pre-processed data
