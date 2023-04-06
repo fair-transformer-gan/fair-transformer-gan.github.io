@@ -12,8 +12,10 @@ Our project was heavily influenced by the previous research by Depeng Xu, Shuhan
 and their published paper [FairGAN+: Achieving Fair Data Generation and Classification through Generative Adversarial Nets].
 
 #### Model Architecture
-While a lot of work is based on the FairGAN+ model one of the major enhancements to the architecture was the addition of the Attention layer, which 
-broadened this GAN architecture to be applicable on more complex tabular datasets with many features.
+Fairness and accuracy are critical factors in generating high-quality synthetic data for various applications in machine learning. To address these challenges, we made modifications to the generator architecture of FairGAN+. By leveraging the transformer architecture, we were able to generate more accurate and fair synthetic data. These modifications have the potential to improve the quality and equity of synthetic data, which is crucial in various applications, such as data augmentation and privacy-preserving machine learning.
+
+##### Transformer
+We integrated a transformer into the original generator architecture to capture the collinearity relationship between the features, outcome variable, and protected attribute. The attention mechanism was incorporated into the output of the FairGAN+ generator encoder to generate contextualized embeddings. These embeddings were then fed into the FairGAN+ generator decoder to produce continuous-value synthetic data.
 
 {: .highlight }
 Add more on Architecture
