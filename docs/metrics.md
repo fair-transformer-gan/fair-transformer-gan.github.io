@@ -19,35 +19,27 @@ nav_order: 3
 {: .note-title }
 > CLASS
 >
-> `dataset.Dataset`()
+> `Metrics`()
 
 
 ### Metrics.binary_fair_data_generation_metrics
 {: .note-title }
 > Method
 >
-> `dataset.Dataset.pre_process`(protected_col_name, y_col_name, output_file_name, multiclass=False, min_max_scale=True)
+> `Metrics.binary_fair_data_generation_metrics`(df, df_real)
 
-Basic pre-processing on a Pandas DataFrame.
+Calculate fair data generation metrics for binary protected attributes.
 
 {: .important-title }
 > Parameters
 
-- **protected_col_name** [str] - Name of the protected column in the Pandas DataFrame
-- **y_col_name** [str] - Name of the target column in the Pandas DataFrame
-- **output_file_name** [str] - Name the Pickle file that will be saved in the data/interim folder
-- **multiclass** (Optional [bool]) - Set to True if your protected variable is categorical has more than two states.
-- **min_max_scale** (Optional [bool]) - Set to False if using scaled data
-
-{: .important-title }
-> Raises
-
-**Exception** - if dataset has nulls
+- **df** [DataFrame] - The synthetic/generated dataset using Fair Transformer GAN
+- **df_real** [DataFrame] - The pre-processed dataset containing the original/real data
 
 {: .important-title }
 > Return type
 
-Numpy array with pre-processed data
+Dictionary with the fair data generation metrics.
 
 
 
