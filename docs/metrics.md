@@ -9,20 +9,20 @@ nav_order: 3
 
 | Function     | Description      |
 |:-------------|:------------------|
-| [`binary_fair_data_generation_metrics`](#datasetdatasetpre_process)| This method calculates four fairness metrics: Risk Difference, Balanced Error Rate, Distance w/o S, and Distance with S. The first metric is the difference in the probability of the positive outcome (i.e., 1) between two groups defined by a protected attribute (S). The second metric is the average error rate of predicting the positive outcome for each group, weighted by the size of each group. The third and fourth metrics measure the distance between the joint probability distributions of the synthetic and real datasets, with and without the protected attribute S, respectively. |
-| [`multi_fair_data_generation_metrics`](#datasetdatasetpost_process) | This method calculates a relaxed version of the Risk Difference metric. It first calculates the probability of the positive outcome for each group defined by the protected attribute S. Then, it checks whether these probabilities are within one or two standard deviations of the mean probability of the positive outcome across all groups. If they are, then the metric is deemed to be fair, and its value is set to 0. If not, then the metric is set to the average difference between the probability of the positive outcome in each group and the mean probability of the positive outcome across all groups. This metric is more lenient than the original Risk Difference metric since it allows for some variation in the probability of the positive outcome across different groups. |
-| [`binary_fair_data_classification_metrics`](#datasetdatasetget_protected_distribution) | This method is used to evaluate the fairness of binary classification models on given data. The input to this method is the predicted labels and true labels for the binary classification task, along with the sensitive attribute values of the individuals in the dataset. The method returns various fairness metrics such as disparate impact, equal opportunity difference, and demographic parity difference. Disparate impact measures the ratio of favorable outcomes for the unprivileged group to that of the privileged group. Equal opportunity difference measures the difference in true positive rate between the unprivileged and privileged groups, while demographic parity difference measures the difference in positive rate between the unprivileged and privileged groups. |
-| [`multi_fair_data_classification_metrics`](#datasetdatasetget_target_distribution) | This method is similar to the binary_fair_data_classification_metrics method, but is used for evaluating the fairness of multi-class classification models. The input to this method is again the predicted labels and true labels, along with the sensitive attribute values. The method returns various fairness metrics such as mean demographic disparity, mean equal opportunity difference, and mean conditional demographic disparity. Mean demographic disparity measures the difference in positive rate across all classes between the unprivileged and privileged groups. Mean equal opportunity difference measures the difference in true positive rate across all classes between the unprivileged and privileged groups. Mean conditional demographic disparity measures the difference in positive rate for each class between the unprivileged and privileged groups. |
+| [`binary_fair_data_generation_metrics`](#Metricsbinary_fair_data_generation_metrics)| This method is used to evaluate the fairness of the generated/synthetic data. This method calculates the following fairness metrics: Risk Difference (RD), Balanced Error Rate (BER), and Euclidean Distance (with and without the protected attribute S). RD is the difference in the probability of the positive outcomes between two groups defined by S and is meant to capture disparate treatment. BER is the average error rate of predicting the protected attribute S using X features and is meant to capture disparate impact. The Euclidean Distance metrics measure the distance between the joint probability distributions of the synthetic and real datasets, with and without the protected attribute S, respectively. The distances represent the closeness and faithfulness to the original dataset. |
+| [`multi_fair_data_generation_metrics`](#Metricsmulti_fair_data_generation_metrics) | This method is similar to the binary version, but it is designed to handle up to 5 protected attributes. The main difference is that it calculates a relaxed version of the Risk Difference metric. It first calculates the probability of the positive outcome for each group defined by the protected attribute S. Then, it checks whether these probabilities are within one or two standard deviations of the mean probability of the positive outcome across all groups. If they are, then the metric is deemed to be fair, and its value is set to TRUE. If not, then the metric is set to FALSE. This metric is more lenient than the original Risk Difference metric since it allows for some variation in the probability of the positive outcome across different groups. |
+| [`binary_fair_data_classification_metrics`](#Metricsbinary_fair_data_classification_metrics) | This method is used to evaluate the fairness of binary classification models on given data. This method calculates the following fairness metrics: Demographic Parity (DP), Difference in True Positive Rates (DTPR), Difference in False Positive Rates (DFPR), Accuracy, and F1 Score. DP is meant to reflect whether a model trained on the generated data learns to predict fairer outcomes. DTPR and DFPR and meant to capture equality of odds so that the model is not systemically advantaging or disadvantaging any particular group. Finally, accuracy and F1 score are measured to see if there is a tradeoff in utility compared to a model trained on the original dataset (we expect a decline in utility in exchange for fairness). |
+| [`multi_fair_data_classification_metrics`](#Metricsmulti_fair_data_classification_metrics) | This method is similar to the binary version, but it is designed to handle multiple protected attributes. Similar to the multi-fair data generation method, it calculates a relaxed version of Demographic Parity, Difference in True Positive Rates, and Difference in False Positive Rates using the same logic. This metric is more lenient than the original metrics since it allows for some variation in the metrics across different groups. |
 
 
-### dataset.Dataset
+### Metrics
 {: .note-title }
 > CLASS
 >
 > `dataset.Dataset`()
 
 
-### dataset.Dataset.pre_process
+### Metrics.binary_fair_data_generation_metrics
 {: .note-title }
 > Method
 >
@@ -51,7 +51,7 @@ Numpy array with pre-processed data
 
 
 
-### dataset.Dataset.post_process
+### Metrics.multi_fair_data_generation_metrics
 {: .note-title }
 > Method
 >
@@ -69,7 +69,7 @@ Iverse scaling on the generated dataset.
 
 Numpy array with post-processed data
 
-### dataset.Dataset.get_protected_distribution
+### Metrics.binary_fair_data_classification_metrics
 {: .note-title }
 > Method
 >
@@ -104,7 +104,7 @@ dataset.protected_names
 ```
 
 
-### dataset.Dataset.get_target_distribution
+### Metrics.multi_fair_data_classification_metrics
 {: .note-title }
 > Method
 >
