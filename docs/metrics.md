@@ -106,7 +106,7 @@ Dictionary with the fair data classification metrics.
 
 | Metric    | Binary Formula | 
 |:-------------|:------------------|
-| [`Risk Difference`] | RD = P(Y = 1|S = 1) − P(Y = 1|S = 0) |
-| [`Balanced Error Rate`] | BER(f(X), S) = P(f(X) = 0 | S = 1) + P(f(X) = 1 | S = 0) / 2 |
-| [`Euclidean Distance (with S)`] | dist(X, Y, S) = Pdata(X, Y, S)−PG(X, Y, S)2 |
-| [`Euclidean Distance (without S)`] | dist(X, Y) = Pdata(X, Y ) − PG(X, Y )2 |
+| [`Risk Difference`] | ['RD = P(Y = 1|S = 1) − P(Y = 1|S = 0)'] |
+| [`Balanced Error Rate`] | ['BER(f(X), S) = P(f(X) = 0 | S = 1) + P(f(X) = 1 | S = 0) / 2'] |
+| [`Euclidean Distance (with S)`] | ['dist(X, Y, S) = Pdata(X, Y, S)−PG(X, Y, S)2'] |
+| [`Euclidean Distance (without S)`] | ['dist(X, Y) = Pdata(X, Y ) − PG(X, Y )2'] |
