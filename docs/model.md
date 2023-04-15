@@ -29,7 +29,36 @@ The train folder contains training script that can be run via command line.
 | [`calculateClassifierAccuracy`](#datasetdatasetget_target_distribution) | Calculate classifier accuracy |
 | [`calculateClassifierRD`](#datasetdatasetget_target_distribution) | Calculate classifier risk difference score across all protected attribute classes |
 | [`create_z_masks`](#datasetdatasetget_target_distribution) | Calculate mask for each protected attribute class|
-| [`train`](#datasetdatasetget_target_distribution) | Train models |
+| [`train`](#datasetdatasetget_target_distribution) | Train model |
+
+
+
+### FairTransformerGAN
+{: .note-title }
+> CLASS
+>
+> `FairTransformerGAN`()
+
+
+### loadData
+{: .note-title }
+> Method
+>
+> `loadData`(dataPath='')
+
+Loads data from given path and splits it into train and validation sets
+
+{: .important-title }
+> Parameters
+
+- **dataPath** [str] - Absolute path to processed numpy data file
+
+
+{: .important-title }
+> Return type
+
+Numpy arrays of split train and validation data
+
 
 
 

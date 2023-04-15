@@ -23,11 +23,11 @@ nav_order: 3
 > `Metrics`()
 
 
-### Metrics.binary_fair_data_generation_metrics
+### binary_fair_data_generation_metrics
 {: .note-title }
 > Method
 >
-> `Metrics.binary_fair_data_generation_metrics`(df)
+> `binary_fair_data_generation_metrics`(df)
 
 Calculate fair data generation metrics for binary protected attributes.
 
@@ -41,11 +41,11 @@ Calculate fair data generation metrics for binary protected attributes.
 
 Dictionary with the fair data generation metrics.
 
-### Metrics.multi_fair_data_generation_metrics
+### multi_fair_data_generation_metrics
 {: .note-title }
 > Method
 >
-> `Metrics.multi_fair_data_generation_metrics`(df)
+> `multi_fair_data_generation_metrics`(df)
 
 Calculate fair data generation metrics for multiple protected attributes.
 
@@ -59,11 +59,11 @@ Calculate fair data generation metrics for multiple protected attributes.
 
 Dictionary with the fair data generation metrics.
 
-### Metrics.euclidean_distance
+### euclidean_distance
 {: .note-title }
 > Method
 >
-> `Metrics.euclidean_distance`(df, df_real)
+> `euclidean_distance`(df, df_real)
 
 Calculate euclidean distance of joint probability distributions between two datasets.
 
@@ -78,11 +78,11 @@ Calculate euclidean distance of joint probability distributions between two data
 
 Dictionary with the distance metrics.
 
-### Metrics.binary_fair_data_classification_metrics
+### binary_fair_data_classification_metrics
 {: .note-title }
 > Method
 >
-> `Metrics.binary_fair_data_classification_metrics`(X_real, y_real, y_pred)
+> `binary_fair_data_classification_metrics`(X_real, y_real, y_pred)
 
 Calculate fair data classification metrics for binary protected attributes.
 
@@ -98,11 +98,11 @@ Calculate fair data classification metrics for binary protected attributes.
 
 Dictionary with the fair data classification metrics.
 
-### Metrics.multi_fair_data_classification_metrics
+### multi_fair_data_classification_metrics
 {: .note-title }
 > Method
 >
-> `Metrics.binary_fair_data_classification_metrics`(X_real, y_real, y_pred)
+> `binary_fair_data_classification_metrics`(X_real, y_real, y_pred)
 
 Calculate fair data classification metrics for multiple protected attributes.
 

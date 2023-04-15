@@ -24,11 +24,11 @@ A helper class for data pre-processing. Automates steps such as binarizing and s
 > `dataset.Dataset`()
 
 
-### dataset.Dataset.pre_process
+### pre_process
 {: .note-title }
 > Method
 >
-> `dataset.Dataset.pre_process`(protected_col_name, y_col_name, output_file_name, multiclass=False, min_max_scale=True)
+> `pre_process`(protected_col_name, y_col_name, output_file_name, multiclass=False, min_max_scale=True)
 
 Basic pre-processing on a Pandas DataFrame.
 
@@ -53,11 +53,11 @@ Numpy array with pre-processed data
 
 
 
-### dataset.Dataset.post_process
+### post_process
 {: .note-title }
 > Method
 >
-> `dataset.Dataset.post_process`(gen_data_np)
+> `post_process`(gen_data_np)
 
 Iverse scaling on the generated dataset.
 
@@ -71,11 +71,11 @@ Iverse scaling on the generated dataset.
 
 Numpy array with post-processed data
 
-### dataset.Dataset.get_protected_distribution
+### get_protected_distribution
 {: .note-title }
 > Method
 >
-> `dataset.Dataset.get_protected_distribution`
+> `get_protected_distribution`
 
 Returns the protected variable distribution after pre-processing. 
 
@@ -106,11 +106,11 @@ dataset.protected_names
 ```
 
 
-### dataset.Dataset.get_target_distribution
+### get_target_distribution
 {: .note-title }
 > Method
 >
-> `dataset.Dataset.get_target_distribution`
+> `get_target_distribution`
 
 Returns the target variable distribution after pre-processing. 
 
