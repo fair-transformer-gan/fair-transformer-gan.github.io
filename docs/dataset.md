@@ -9,7 +9,7 @@ nav_order: 1
 
 A helper class for data pre-processing. Automates steps such as binarizing and scaling data, placing target and protected class in the right position, checks for nulls and allowed column types.
 
-| Function     | Descriptioin      |
+| Function     | Description      |
 |:-------------|:------------------|
 | [`pre_process`](#datasetdatasetpre_process)| This step is optional and does a couple simple pre-processing check and adjustments, such as scaling, checking for nulls, setting protected and target columns |
 | [`post_process`](#datasetdatasetpost_process) | Run on generated dataset to inverse scaling |
