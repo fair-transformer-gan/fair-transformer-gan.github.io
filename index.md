@@ -29,12 +29,11 @@ docker build -t <image name> -f fair_transformer_GAN/setup/Dockerfile .
 docker run -p 8888:8888 <docker image name>
 ```
 4. Copy the http jupyter notebook link into browser
-5. Can continue running the following "Getting Started" code to train model and generate data. Can also browse to the example python notebook from the Git repo. 
-6. After generating the bias-mitigated data or models, don't forget to save your data to your local machine.
+5. Continue running the following "Getting Started" code to train model and generate data. You can also browse to the example python notebook from the Git repo. 
+6. After generating the bias-mitigated data or models, don't forget to save your data to your local machine. You can also download via the Jupyter notebook interface.
 ```
 docker cp my_container:/path/to/*.npy /path/to/local/dir
 ```
-or download via jupyter notebook. 
 
 7. Once stop your container, don't forget to remove the image and container if no longer in use. 
 ```
