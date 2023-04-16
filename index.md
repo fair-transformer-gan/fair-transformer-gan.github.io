@@ -6,11 +6,9 @@ nav_order: 1
 
 ## A generative model to mitigate bias in tabular data.
 
-As the use of AI and other machine learning models becomes more prevalent in our day-to-day lives, it becomes increasingly important to scrutinize the underlying datasets that these models are trained on so that we avoid perpetuating any potential biases.
+As AI and machine learning models become more ubiquitous in our daily lives, it is crucial that we scrutinize the datasets used to train them to avoid perpetuating biases. This is particularly important since ML models are increasingly being used to make critical decisions that impact people's lives, such as predicting recidivism, medical prioritization, mortgage approvals, and career advancement.
 
-Machine learning(ML) models are not limited to just entertainment; they can be used to make serious life decisions, such as predicting recidivism, medical-delivery priorities, mortgage loans, or career progressions. At the end of the day, biased data leads to biased models.
-
-This project aims to solve the problem and started as a UC Berkeley capstone, to generate a synthetic training data that will mitigate racial, gender or other forms of bias in datasets. We attempted to solve the problem by Generative Advesarial Network(GAN) transfomer architecture with three discirminator, one classifier and one generator.
+To tackle this issue, a team at UC Berkeley embarked on a capstone project with the goal of generating synthetic training data that would minimize biases linked to factors like race and gender. They employed a Generative Adversarial Network (GAN) transformer architecture consisting of three discriminators, one classifier, and one generator to achieve this aim. The objective was to develop a model that would produce less biased data and, as a result, create fairer outcomes.
 
 ### Installing
 
