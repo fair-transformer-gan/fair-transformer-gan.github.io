@@ -30,6 +30,26 @@ docker run -p 8888:8888 <docker image name>
 ```
 4. Copy the http jupyter notebook link into browser
 5. Can continue running the following "Getting Started" code to train model and generate data. Can also browse to the example python notebook from the Git repo. 
+6. After generating the mitigated bias data, don't forget to save your local machine.
+```
+docker cp my_container:/path/to/*.npy /path/to/local/dir
+```
+or download via jupyter notebook. 
+7. Once stop your container, don't forget to remove the image and container if no longer in use. 
+```
+# see what containers are active or stopped (exited)
+docker ps -a 
+# stop container
+docker stop <container id>
+docker ps -a 
+# remove container
+docker rm <container id>
+docker ps -a
+docker images
+# rm images 
+docker rmi <images id>
+docker images
+```
 
 
 ### Local (set up option 2 of 3)
