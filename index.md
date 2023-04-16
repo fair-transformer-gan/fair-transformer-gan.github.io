@@ -35,6 +35,7 @@ docker run -p 8888:8888 <docker image name>
 docker cp my_container:/path/to/*.npy /path/to/local/dir
 ```
 or download via jupyter notebook. 
+
 7. Once stop your container, don't forget to remove the image and container if no longer in use. 
 ```
 # see what containers are active or stopped (exited)
