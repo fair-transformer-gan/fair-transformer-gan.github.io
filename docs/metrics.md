@@ -9,11 +9,11 @@ nav_order: 3
 
 | Function     | Description       |
 |:-------------|:------------------|
-| [`binary_fair_data_generation_metrics`](#metricsbinary_fair_data_generation_metrics)| This method is used to evaluate the fairness of the generated/synthetic data. This method calculates the following fairness metrics: Risk Difference (RD) and Balanced Error Rate (BER). RD is the difference in the probability of the positive outcomes between two protected groups and is meant to capture disparate treatment. BER is the average error rate of predicting the protected attribute using X features and is meant to capture disparate impact. |
-| [`multi_fair_data_generation_metrics`](#metricsmulti_fair_data_generation_metrics) | This method is similar to the binary version, but it is designed to handle multiple protected attributes. The main difference is that it calculates a relaxed version of the Risk Difference metric. It first calculates the probability of the positive outcome for each group defined by the protected attribute. Then, it checks whether these probabilities are within a certain number of standard deviations of the mean probability of the positive outcome across all groups. If they are, then the metric is deemed to be fair, and its value is set to TRUE. If not, then the metric is set to FALSE. This metric is more lenient than the original Risk Difference metric since it allows for some variation in the probability of the positive outcome across different groups. |
+| [`binary_fair_data_generation_metrics`](#binary_fair_data_generation_metrics)| This method is used to evaluate the fairness of the generated/synthetic data. This method calculates the following fairness metrics: Risk Difference (RD) and Balanced Error Rate (BER). RD is the difference in the probability of the positive outcomes between two protected groups and is meant to capture disparate treatment. BER is the average error rate of predicting the protected attribute using X features and is meant to capture disparate impact. |
+| [`multi_fair_data_generation_metrics`](#multi_fair_data_generation_metrics) | This method is similar to the binary version, but it is designed to handle multiple protected attributes. The main difference is that it calculates a relaxed version of the Risk Difference metric. It first calculates the probability of the positive outcome for each group defined by the protected attribute. Then, it checks whether these probabilities are within a certain number of standard deviations of the mean probability of the positive outcome across all groups. If they are, then the metric is deemed to be fair, and its value is set to TRUE. If not, then the metric is set to FALSE. This metric is more lenient than the original Risk Difference metric since it allows for some variation in the probability of the positive outcome across different groups. |
 | [`euclidean_distance`](#metricseuclidean_distance) | The Euclidean Distance metrics measure the distance between the joint probability distributions of the synthetic and real datasets, with and without the protected attribute, respectively. The distances represent the closeness and faithfulness to the original dataset. |
-| [`binary_fair_data_classification_metrics`](#metricsbinary_fair_data_classification_metrics) | This method is used to evaluate the fairness of binary classification models on given data. This method calculates the following fairness metrics: Demographic Parity (DP), Difference in True Positive Rates (DTPR), Difference in False Positive Rates (DFPR), Accuracy, and F1 Score. DP is meant to reflect whether a model trained on the generated data learns to predict fairer outcomes. DTPR and DFPR and meant to capture equality of odds so that the model is not systemically advantaging or disadvantaging any particular group. Finally, accuracy and F1 score are measured to see if there is a tradeoff in utility compared to a model trained on the original dataset (we expect a decline in utility in exchange for fairness). |
-| [`multi_fair_data_classification_metrics`](#metricsmulti_fair_data_classification_metrics) | This method is similar to the binary version, but it is designed to handle multiple protected attributes. Similar to the multi-fair data generation method, it calculates a relaxed version of Demographic Parity, Difference in True Positive Rates, and Difference in False Positive Rates using the same logic. This metric is more lenient than the original metrics since it allows for some variation in the metrics across different groups. |
+| [`binary_fair_classification_metrics`](#binary_fair_classification_metrics) | This method is used to evaluate the fairness of binary classification models on given data. This method calculates the following fairness metrics: Demographic Parity (DP), Difference in True Positive Rates (DTPR), Difference in False Positive Rates (DFPR), Accuracy, and F1 Score. DP is meant to reflect whether a model trained on the generated data learns to predict fairer outcomes. DTPR and DFPR and meant to capture equality of odds so that the model is not systemically advantaging or disadvantaging any particular group. Finally, accuracy and F1 score are measured to see if there is a tradeoff in utility compared to a model trained on the original dataset (we expect a decline in utility in exchange for fairness). |
+| [`multi_fair_classification_metrics`](#multi_fair_classification_metrics) | This method is similar to the binary version, but it is designed to handle multiple protected attributes. Similar to the multi-fair data generation method, it calculates a relaxed version of Demographic Parity, Difference in True Positive Rates, and Difference in False Positive Rates using the same logic. This metric is more lenient than the original metrics since it allows for some variation in the metrics across different groups. |
 
 
 ### Metrics
@@ -78,11 +78,11 @@ Calculate euclidean distance of joint probability distributions between two data
 
 Dictionary with the distance metrics.
 
-### binary_fair_data_classification_metrics
+### binary_fair_classification_metrics
 {: .note-title }
 > Method
 >
-> `binary_fair_data_classification_metrics`(X_real, y_real, y_pred)
+> `binary_fair_classification_metrics`(X_real, y_real, y_pred)
 
 Calculate fair data classification metrics for binary protected attributes.
 
@@ -98,11 +98,11 @@ Calculate fair data classification metrics for binary protected attributes.
 
 Dictionary with the fair data classification metrics.
 
-### multi_fair_data_classification_metrics
+### multi_fair_classification_metrics
 {: .note-title }
 > Method
 >
-> `binary_fair_data_classification_metrics`(X_real, y_real, y_pred)
+> `binary_fair_classification_metrics`(X_real, y_real, y_pred)
 
 Calculate fair data classification metrics for multiple protected attributes.
 
