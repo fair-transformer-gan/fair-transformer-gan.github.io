@@ -53,7 +53,7 @@ If you would like to uplevel your data, please specify the numpy input of your d
 technique of modifying a dataset to increase the representation of a particular group or subgroup.
 ```
 np_upleveled = dataset.uplevel(np_data = np_input, percentage = 2, balanceOutcome = 1,
-                                    output_file_name='data/interim/adult_race_multi_upleveled')
+                                    output_file_name_path='data/interim/adult_race_multi_upleveled')
 ```
 
 Get the distribution of protected attribute and the outcome variable
