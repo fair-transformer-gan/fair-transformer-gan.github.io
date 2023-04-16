@@ -67,6 +67,7 @@ mkdir ~/.pip/
 ```
 source setup/setup_env.sh
 ```
+
 ### Google Colab (set up option 3 of 3)
 todo: link to a old distro of code that allowed for transgan called from google colab --- there's a link that can point to a google colab 
 
