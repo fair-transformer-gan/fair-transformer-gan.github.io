@@ -14,13 +14,25 @@ This project aims to solve the problem and started as a UC Berkeley capstone, to
 
 ### Installing
 
-Pull down model from GitHub and follow virtual environment set up instructions
+Pull down model from GitHub and follow virtual environment set up instructions below. 
 
 [Visit Project GitHub Repo](https://github.com/tflint-ucb/fair_transformer_GAN){: .btn .btn-purple }
 
-### Getting started
+### Docker container (set up option 1 of 3)
+1. Clone Git repo (fair_transformer_GAN)
+2. Build the docker image
+```
+docker build -t <image name> -f fair_transformer_GAN/setup/Dockerfile .
+```
+3. Run jupyter notebook
+```
+docker run -p 8888:8888 <docker image name>
+```
+4. Copy the http jupyter notebook link into browser
+5. Can continue running the following "Getting Started" code to train model and generate data. Can also browse to the example python notebook from the Git repo. 
 
-Setting up the environment (sh method)
+
+### Local (set up option 2 of 3)
 1. Clone Git repo
 2. Create a pip directory
 ```
@@ -34,6 +46,10 @@ mkdir ~/.pip/
 ```
 source setup/setup_env.sh
 ```
+### Google Colab (set up option 3 of 3)
+todo: link to a old distro of code that allowed for transgan called from google colab --- there's a link that can point to a google colab 
+
+### Getting started
 
 Import necessary dependencies
 
