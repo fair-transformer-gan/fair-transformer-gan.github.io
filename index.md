@@ -20,6 +20,21 @@ Pull down model from GitHub and follow virtual environment set up instructions
 
 ### Getting started
 
+Setting up the environment (sh method)
+1. Clone Git repo
+2. Create a pip directory
+```
+mkdir ~/.pip/
+```
+3. Create an empty pip.conf file in that directory
+```
+~/.pip/pip.conf 
+```
+4. Run the setup_env.sh script
+```
+source setup/setup_env.sh
+```
+
 Import necessary dependencies
 
 ```
