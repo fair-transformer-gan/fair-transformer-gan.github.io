@@ -30,7 +30,7 @@ docker run -p 8888:8888 <docker image name>
 ```
 4. Copy the http jupyter notebook link into browser
 5. Can continue running the following "Getting Started" code to train model and generate data. Can also browse to the example python notebook from the Git repo. 
-6. After generating the mitigated bias data, don't forget to save your local machine.
+6. After generating the bias-mitigated data or models, don't forget to save your data to your local machine.
 ```
 docker cp my_container:/path/to/*.npy /path/to/local/dir
 ```
