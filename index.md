@@ -60,7 +60,7 @@ mkdir ~/.pip/
 ```
 ~/.pip/pip.conf 
 ```
-4. Run the setup_env.sh script
+4. cd into the git repo and run the setup_env.sh script
 ```
 source setup/setup_env.sh
 ```
