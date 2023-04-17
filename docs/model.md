@@ -13,21 +13,21 @@ The train folder contains training script that can be run via command line.
 
 | Function     | Description      |
 |:-------------|:------------------|
-| [`loadData`](#loadData)| Load processed data created from Dataset class |
-| [`buildAutoencoder`](#buildAutoencoder) | Build autoencoder that encodes the input data |
-| [`buildGenerator`](#buildGenerator) | Build the generator for training |
-| [`buildGeneratorTest`](#buildGeneratorTest) | Build the generator when generating new data |
-| [`getDiscriminatorResults`](#getDiscriminatorResults) | Calculate the discriminator predictions |
-| [`buildDiscriminator`](#buildDiscriminator) | Build the discriminator |
+| [`loadData`](#loaddata)| Load processed data created from Dataset class |
+| [`buildAutoencoder`](#buildautoencoder) | Build autoencoder that encodes the input data |
+| [`buildGenerator`](#buildgenerator) | Build the generator for training |
+| [`buildGeneratorTest`](#buildgeneratortest) | Build the generator when generating new data |
+| [`getDiscriminatorResults`](#getdiscriminatorresults) | Calculate the discriminator predictions |
+| [`buildDiscriminator`](#builddiscriminator) | Build the discriminator |
 | [`print2file`](#print2file) | Print the training metrics to the log file |
-| [`generateData`](#generateData) | Generate new data using the trained model |
-| [`calculateDiscAuc`](#calculateDiscAuc) | Calculate discriminator AUC |
-| [`calculateDiscAccuracy`](#calculateDiscAccuracy) | Calculate discriminator accuracy |
-| [`calculateGenAccuracy`](#calculateGenAccuracy) | Calculate generator accuracy |
+| [`generateData`](#generatedata) | Generate new data using the trained model |
+| [`calculateDiscAuc`](#calculatediscauc) | Calculate discriminator AUC |
+| [`calculateDiscAccuracy`](#calculatediscaccuracy) | Calculate discriminator accuracy |
+| [`calculateGenAccuracy`](#calculategenaccuracy) | Calculate generator accuracy |
 | [`pair_rd`](#pair_rd) | Calculate total pairwise risk difference |
-| [`calculateRD`](#calculateRD) | Calculate risk difference score across all protected attribute classes |
-| [`calculateClassifierAccuracy`](#calculateClassifierAccuracy) | Calculate classifier accuracy |
-| [`calculateClassifierRD`](#calculateClassifierRD) | Calculate classifier risk difference score across all protected attribute classes |
+| [`calculateRD`](#calculaterd) | Calculate risk difference score across all protected attribute classes |
+| [`calculateClassifierAccuracy`](#calculateclassifieraccuracy) | Calculate classifier accuracy |
+| [`calculateClassifierRD`](#calculateclassifierrd) | Calculate classifier risk difference score across all protected attribute classes |
 | [`create_z_masks`](#create_z_masks) | Calculate mask for each protected attribute class|
 | [`train`](#train) | Train model |
 
