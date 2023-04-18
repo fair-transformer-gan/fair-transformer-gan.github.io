@@ -88,7 +88,8 @@ from src.metrics.metrics import Metrics
 from src.metrics.classifier import Classifier
 ```
 
-You can read in your raw data into a pandas dataframe and take advantage of built in pre-processing steps, see [Dataset](/docs/dataset.html) class API for more details. This step is **Optional** feel free to pre-process your own data and save a pickled numpy array for the model. And move on to the Upleveling step.
+You can read in your raw data into a pandas dataframe and take advantage of built in pre-processing steps. 
+
 ```
 df = pd.read_csv('data/raw/adult.csv')
 df.head()
@@ -103,6 +104,9 @@ np_input = dataset.pre_process(protected_var='race',
                                 output_file_name='data/interim/adult_race_multi', multiclass=True)
 np_input
 ```
+
+{: .note }
+The steps above are **Optional** feel free to pre-process your own data and save a pickled numpy array for the model. See [Dataset](/docs/dataset.html) class API for more details.
 
 Upleveling is the technique of modifying a dataset to increase the representation of a particular group or subgroup. If you would like to uplevel your data, please specify the data in numpy format, the percentage you would like to uplevel, and the outcome class you would like to balance. Output pickle file created. 
 ```
