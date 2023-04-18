@@ -34,17 +34,19 @@ Initializes dataset class using Pandas Dataframe.
 
 {: .important-title }
 > Parameters
-- **dataframe** [Pandas DataFrame]: Training data before pre-processing
-- **scaler** [sklearn.preprocessing.MinMaxScaler]: initialize the MinMaxScaler object that will be used to scale data in pre-processing and post-processing
-- **np_data** [numpy.ndarray]: Processed data in a Numpy array
-- **target_names** List[str]: Target variable column names
-- **protected_names** List[str]: Protected variable column names
-- **processed_col_types** List[str]: store list for the original dataset column types, used in post-processing
+> 
+> - **dataframe** [Pandas DataFrame]: Training data before pre-processing
+> - **scaler** [sklearn.preprocessing.MinMaxScaler]: initialize the MinMaxScaler object that will be used to scale data in pre-processing and post-processing
+> - **np_data** [numpy.ndarray]: Processed data in a Numpy array
+> - **target_names** List[str]: Target variable column names
+> - **protected_names** List[str]: Protected variable column names
+> - **processed_col_types** List[str]: store list for the original dataset column types, used in post-processing
 
 
 {: .important-title }
 > Return type
-`None`
+>
+>`None`
 
 
 ### pre_process
