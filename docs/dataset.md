@@ -17,7 +17,7 @@ A helper class for data pre-processing. Automates steps such as binarizing and s
 | [`get_target_distribution`](#get_target_distribution)           | Gets target variable distribution from the dataset |
 
 
-### dataset.Dataset
+### Dataset
 {: .note-title }
 > CLASS
 >
