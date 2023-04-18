@@ -69,7 +69,7 @@ Initializes FairTransformerGAN model with given parameters. Based on MedGAN arch
 {: .important-title }
 > Return type
 
-[None]
+`None`
 
 
 ### loadData
@@ -248,7 +248,7 @@ Writes training metrics to log file.
 {: .important-title }
 > Return type
 
-[None]
+`None`
 
 
 ### generateData
@@ -272,7 +272,7 @@ Generates less-biased data using trained model and save to output path specified
 {: .important-title }
 > Return type
 
-[None]
+`None`
 
 
 ### calculateDiscAuc
@@ -485,4 +485,4 @@ Train the Fair Transformer GAN model and save it to the output path specified.
 {: .important-title }
 > Return type
 
-[None]
+`None`
