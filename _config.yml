@@ -18,6 +18,4 @@ callouts:
     title: Note
     color: purple
 
-logo: "logo.png"
-
-favicon_ico: "logo.fav"
+favicon_ico: "logo.png"
