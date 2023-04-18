@@ -5,7 +5,7 @@ nav_order: 2
 ---
 
 # About
-## A 2023 UC Berkeley Capstone project to mitigate racial, gender and other biases in data and machine learning models
+## A 2023 UC Berkeley Capstone project to mitigate racial, gender and other biases in data
 
 To mitigate the potential biases in machine learning models that are increasingly present in our daily lives, we created a model that generates synthetic training data. Our approach advances the state-of-the-art FairGAN+ by incorporating a transformer architecture, resulting in more accurate and fairer data generation. These modifications have the potential to improve the quality and equity of synthetic data, which is crucial in various applications, such as data augmentation and privacy-preserving machine learning.
 

@@ -44,17 +44,7 @@ The train folder contains training script that can be run via command line.
 {: .note-title }
 > Method
 >
-> `__init__`(dataType='binary',
-                 inputDim=58,
-                 embeddingDim=32,
-                 randomDim=32,
-                 generatorDims=(32, 32),
-                 discriminatorDims=(32, 16, 1),
-                 compressDims=(),
-                 decompressDims=(),
-                 bnDecay=0.99,
-                 l2scale=0.001,
-                 lambda_fair=1)
+> `__init__(dataType='binary',inputDim=58,embeddingDim=32,randomDim=32,generatorDims=(32, 32),discriminatorDims=(32, 16, 1),compressDims=(),decompressDims=(),bnDecay=0.99,l2scale=0.001,lambda_fair=1)`
 
 Initializes FairTransformerGAN model with given parameters. Based on MedGAN architecture.
 
@@ -86,7 +76,7 @@ Initializes FairTransformerGAN model with given parameters. Based on MedGAN arch
 {: .note-title }
 > Method
 >
-> `loadData`(dataPath='')
+> `loadData(dataPath='')`
 
 Loads data from given path and splits it into train and validation sets.
 
@@ -107,7 +97,7 @@ Loads data from given path and splits it into train and validation sets.
 {: .note-title }
 > Method
 >
-> `buildAutoencoder`(x_input)
+> `buildAutoencoder(x_input)`
 
 Builds the autoencoder that encodes, compresses and then decompresses the input. Calculates the loss between the decompressed input and the original input.
 
@@ -129,9 +119,9 @@ Builds the autoencoder that encodes, compresses and then decompresses the input.
 {: .note-title }
 > Method
 >
-> `buildGenerator`(x_input, y_input, z_input, bn_train)
+> `buildGenerator(x_input, y_input, z_input, bn_train)`
 
-Builds the generator. Generates the x data given the y outcome and z protected attribute during training. Applies multi-head self-attention to x data using MultiHeadSelfAttention class.
+Builds the generator. Generates the x data given the y outcome and z protected attribute during training. Applies multi-head self-attention to x data using `MultiHeadSelfAttention` class.
 
 {: .important-title }
 > Parameters
@@ -154,9 +144,9 @@ Builds the generator. Generates the x data given the y outcome and z protected a
 {: .note-title }
 > Method
 >
-> `buildGenerator`(x_input, y_input, z_input, bn_train)
+> `buildGenerator(x_input, y_input, z_input, bn_train)`
 
-Builds the generator for post model training. Generates the x data given the y outcome and z protected attribute post model training. Applies multi-head self-attention to x data using MultiHeadSelfAttention class.
+Builds the generator for post model training. Generates the x data given the y outcome and z protected attribute post model training. Applies multi-head self-attention to x data using `MultiHeadSelfAttention` class.
 
 {: .important-title }
 > Parameters
@@ -177,7 +167,7 @@ Builds the generator for post model training. Generates the x data given the y o
 {: .note-title }
 > Method
 >
-> `getDiscriminatorResults`(x_input, y_bool, keepRate, z_mask0, z_mask1, z_mask2, z_mask3, reuse=False)
+> `getDiscriminatorResults(x_input, y_bool, keepRate, z_mask0, z_mask1, z_mask2, z_mask3, reuse=False)`
 
 Calculates the discriminator predictions.
 
@@ -207,7 +197,7 @@ Calculates the discriminator predictions.
 {: .note-title }
 > Method
 >
-> `buildDiscriminator`(x_real, y_real, x_fake, y_fake, yb_real, yb_fake, keepRate, decodeVariables, z_r_mask0, z_r_mask1, z_r_mask2, z_r_mask3, z_r_mask4, z_f_mask0, z_f_mask1, z_f_mask2, z_f_mask3, z_f_mask4)
+> `buildDiscriminator(x_real, y_real, x_fake, y_fake, yb_real, yb_fake, keepRate, decodeVariables, z_r_mask0, z_r_mask1, z_r_mask2, z_r_mask3, z_r_mask4, z_f_mask0, z_f_mask1, z_f_mask2, z_f_mask3, z_f_mask4)`
 
 Builds the discriminator.
 
@@ -244,7 +234,7 @@ Builds the discriminator.
 {: .note-title }
 > Method
 >
-> `print2file`(buf, outFile)
+> `print2file(buf, outFile)`
 
 Writes training metrics to log file.
 
@@ -265,7 +255,7 @@ Writes training metrics to log file.
 {: .note-title }
 > Method
 >
-> `generateData`(nSamples=100,modelFile='model',batchSize=100, outFile='out', p_z=[], p_y=[])
+> `generateData(nSamples=100,modelFile='model',batchSize=100, outFile='out', p_z=[], p_y=[])`
 
 Generates less-biased data using trained model and save to output path specified.
 
@@ -289,7 +279,7 @@ Generates less-biased data using trained model and save to output path specified
 {: .note-title }
 > Method
 >
-> `calculateDiscAuc`(preds_real, preds_fake)
+> `calculateDiscAuc(preds_real, preds_fake)`
 
 Calculates discriminator AUC from real and fake predictions.
 
@@ -311,7 +301,7 @@ Calculates discriminator AUC from real and fake predictions.
 {: .note-title }
 > Method
 >
-> `calculateDiscAccuracy`(preds_real, preds_fake)
+> `calculateDiscAccuracy(preds_real, preds_fake)`
 
 Calculates discriminator accuracy from real and fake predictions.
 
@@ -331,7 +321,7 @@ Calculates discriminator accuracy from real and fake predictions.
 {: .note-title }
 > Method
 >
-> `calculateGenAccuracy`(preds_real, preds_fake)
+> `calculateGenAccuracy(preds_real, preds_fake)`
 
 Calculates generator accuracy from real and fake predictions.
 
@@ -351,7 +341,7 @@ Calculates generator accuracy from real and fake predictions.
 {: .note-title }
 > Method
 >
-> `pair_rd`(y_real, z_real)
+> `pair_rd(y_real, z_real)`
 
 Helper function to calculate total pairwise risk difference across all z protected attribute classes.
 
@@ -372,7 +362,7 @@ Helper function to calculate total pairwise risk difference across all z protect
 {: .note-title }
 > Method
 >
-> `calculateRD`(y_real, z_real)
+> `calculateRD(y_real, z_real)`
 
 Calculates risk difference score across all z protected attribute classes during training. Calls pair_rd() function. 
 
@@ -394,7 +384,7 @@ Calculates risk difference score across all z protected attribute classes during
 {: .note-title }
 > Method
 >
-> `calculateClassifierAccuracy`(preds_real, y_real)
+> `calculateClassifierAccuracy(preds_real, y_real)`
 
 Calculates classifier accuracy between real y outcome and predicted y.
 
@@ -417,7 +407,7 @@ Calculates classifier accuracy between real y outcome and predicted y.
 {: .note-title }
 > Method
 >
-> `calculateClassifierRD`(preds_real, z_real, yreal)
+> `calculateClassifierRD(preds_real, z_real, yreal)`
 
 Calculate classifier risk difference score across all z protected attribute classes during training.
 
@@ -445,7 +435,7 @@ Calculate classifier risk difference score across all z protected attribute clas
 {: .note-title }
 > Method
 >
-> `create_z_masks`(z_arr)
+> `create_z_masks(z_arr)`
 
 Create a z_mask for each class (max 5) of protected attribute in z array. Each boolean mask is True at each index it exists in the z array.
 
@@ -472,16 +462,7 @@ Create a z_mask for each class (max 5) of protected attribute in z array. Each b
 {: .note-title }
 > Method
 >
-> `create_z_masks`(dataPath='data',
-              modelPath='',
-              outPath='out',
-              pretrainEpochs=100,
-              nEpochs=300,
-              generatorTrainPeriod=1,
-              discriminatorTrainPeriod=2,
-              pretrainBatchSize=100,
-              batchSize=1000,
-              saveMaxKeep=0, p_z=[], p_y=[])
+> `create_z_masks(dataPath='data',modelPath='',outPath='out',pretrainEpochs=100,nEpochs=300,generatorTrainPeriod=1,discriminatorTrainPeriod=2,pretrainBatchSize=100,batchSize=1000,saveMaxKeep=0, p_z=[], p_y=[])`
 
 Train the Fair Transformer GAN model and save it to the output path specified.
 

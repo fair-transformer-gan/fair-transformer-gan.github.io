@@ -27,7 +27,7 @@ nav_order: 3
 {: .note-title }
 > Method
 >
-> `binary_fair_data_generation_metrics`(df)
+> `binary_fair_data_generation_metrics(df)`
 
 Calculate fair data generation metrics for binary protected attributes.
 
@@ -45,7 +45,7 @@ Dictionary with the fair data generation metrics.
 {: .note-title }
 > Method
 >
-> `multi_fair_data_generation_metrics`(df)
+> `multi_fair_data_generation_metrics(df)`
 
 Calculate fair data generation metrics for multiple protected attributes.
 
@@ -63,7 +63,7 @@ Dictionary with the fair data generation metrics.
 {: .note-title }
 > Method
 >
-> `euclidean_distance`(df, df_real)
+> `euclidean_distance(df, df_real)`
 
 Calculate euclidean distance of joint probability distributions between two datasets.
 
@@ -82,7 +82,7 @@ Dictionary with the distance metrics.
 {: .note-title }
 > Method
 >
-> `binary_fair_classification_metrics`(X_real, y_real, y_pred)
+> `binary_fair_classification_metrics(X_real, y_real, y_pred)`
 
 Calculate fair data classification metrics for binary protected attributes.
 
@@ -102,7 +102,7 @@ Dictionary with the fair data classification metrics.
 {: .note-title }
 > Method
 >
-> `binary_fair_classification_metrics`(X_real, y_real, y_pred)
+> `binary_fair_classification_metrics(X_real, y_real, y_pred)`
 
 Calculate fair data classification metrics for multiple protected attributes.
 
