@@ -15,6 +15,7 @@ A helper class for data pre-processing. Automates steps such as binarizing and s
 | [`post_process`](#post_process) | Run on generated dataset to inverse scaling |
 | [`get_protected_distribution`](#get_protected_distribution)           | Gets protected variable distribution from the dataset |
 | [`get_target_distribution`](#get_target_distribution)           | Gets target variable distribution from the dataset |
+| [`uplevel`](#uplevel)           | Upleveling is a technique of modifying a dataset to increase the representation of a particular group or subgroup. |
 
 
 ### Dataset
@@ -22,6 +23,28 @@ A helper class for data pre-processing. Automates steps such as binarizing and s
 > CLASS
 >
 > `Dataset`()
+
+### __init__
+{: .note-title }
+> Method
+>
+
+`__init__(dataframe)`
+Initializes dataset class using Pandas Dataframe.
+
+{: .important-title }
+> Parameters
+- **dataframe** [Pandas DataFrame]: Training data before pre-processing
+- **scaler** [sklearn.preprocessing.MinMaxScaler]: initialize the MinMaxScaler object that will be used to scale data in pre-processing and post-processing
+- **np_data** [numpy.ndarray]: Processed data in a Numpy array
+- **target_names** List[str]: Target variable column names
+- **protected_names** List[str]: Protected variable column names
+- **processed_col_types** List[str]: store list for the original dataset column types, used in post-processing
+
+
+{: .important-title }
+> Return type
+`None`
 
 
 ### pre_process
@@ -125,3 +148,28 @@ Returns the target variable distribution after pre-processing.
 `List[float]` - distrbution of each target class
 
 To get the dataframe columns corresponding to class names, return `target_names` on the Dataset object.
+
+
+### uplevel
+{: .note-title }
+> Method
+>
+> `uplevel(self, output_file_name_path, np_data = None, percentage = 0, balanceOutcome = 1)`
+
+Returns upleveled Pandas Dataframe 
+
+{: .important-title }
+> Parameters
+
+
+- **protected_col_name** [str] - Name of the protected column in the Pandas DataFrame
+
+- **output_file_name_path** [str] - file path for the data dictionary and pickle file
+- **np_data** [numpy.ndarray] - data containing the protected variable z in column 0, features x, y outcome variable in the last column. The default is using the output from the preprocessor method. (default: np_data = self.np_data) 
+- **pecentage** [float] - percentage to uplevel the non-dominant protected attribute class
+- **balanceOutcome** [int]: class 1 or class 0 of the outcome variable to balance
+
+{: .important-title }
+> Return type
+
+`Padnas.Dataframe` - data with upleveling applied
