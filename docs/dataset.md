@@ -76,7 +76,7 @@ Basic pre-processing on a Pandas DataFrame.
 
 Numpy array with pre-processed data
 
-
+Saves a pickle file with a numpy array and a CSV data dictionary in a provided directory.
 
 ### post_process
 {: .note-title }
