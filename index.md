@@ -6,7 +6,7 @@ nav_order: 1
 
 # A Generative Model to Mitigate Bias in data
 
-As AI and machine learning models become more ubiquitous in our daily lives, it is crucial that we scrutinize the datasets used to train them to avoid perpetuating biases. This is particularly important since ML models are increasingly being used to make critical decisions that impact people's lives, such as predicting recidivism, medical prioritization, mortgage approvals, and career advancement.
+As AI and machine learning models become more ubiquitous in our daily lives, it is crucial that we scrutinize the datasets used to train them to avoid perpetuating biases. This is particularly important since Machine Learning (ML) models are increasingly being used to make critical decisions that impact people's lives, such as predicting recidivism, medical prioritization, mortgage approvals, and career advancement.
 
 To tackle this issue, our team at UC Berkeley embarked on a Capstone Project with the goal of generating synthetic training data that would minimize biases linked to ptorected attributes. Protected attribute are qualities or characteristics that by law, cannot be discriminated against (Ex: race, gender, nationality, etc.)
 
@@ -14,7 +14,7 @@ We built off the existing FairGAN+ model by applying a transformer architecture 
 
 ## Setup
 
-Pull the GitHub repo and follow the steps to setup the virtual environment. There are 2 setup options. After properly setting up your virtual environment, you can follow the "Getting Started" code to train the model and generate data. You can also browse to the example Python Jupyter Notebook in the GitHub repo.  
+Pull the GitHub repo and follow one of the setup steps. After properly setting up your virtual environment, you can follow the [Getting Started](#getting-started) code to train the model and generate data. You can also browse to the example Python Jupyter Notebook in the GitHub repo.  
 
 [Visit Project GitHub Repo](https://github.com/tflint-ucb/fair_transformer_GAN){: .btn .btn-purple }
 
@@ -30,7 +30,7 @@ docker build -t <image name> -f fair_transformer_GAN/setup/Dockerfile .
 docker run -p 8888:8888 <docker image name>
 ```
 4. Copy the http jupyter notebook link into browser
-5. Continue running the following "Getting Started" code to train model and generate data. You can also browse to the example python notebook from the Git repo. 
+5. Continue running the following [Getting Started](#getting-started) code to train model and generate data. You can also browse to the example python notebook from the Git repo. 
 
 Note:
 After generating the data and/or models, save your data to your local machine. You can also download your data to your local machine via the Jupyter Notebook terminal.
@@ -88,7 +88,7 @@ from src.metrics.metrics import Metrics
 from src.metrics.classifier import Classifier
 ```
 
-Read in your raw data
+You can read in your raw data into a pandas dataframe and take advantage of built in pre-processing steps, see [Dataset](/docs/dataset.html) class API for more details. This step is **Optional** feel free to pre-process your own data and save a pickled numpy array for the model. And move on to the Upleveling step.
 ```
 df = pd.read_csv('data/raw/adult.csv')
 df.head()
