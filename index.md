@@ -4,36 +4,41 @@ layout: home
 nav_order: 1
 ---
 
-## A generative model to mitigate bias in tabular data.
+# A Generative Model to Mitigate Bias in data
 
 As AI and machine learning models become more ubiquitous in our daily lives, it is crucial that we scrutinize the datasets used to train them to avoid perpetuating biases. This is particularly important since ML models are increasingly being used to make critical decisions that impact people's lives, such as predicting recidivism, medical prioritization, mortgage approvals, and career advancement.
 
-To tackle this issue, a team at UC Berkeley embarked on a capstone project with the goal of generating synthetic training data that would minimize biases linked to factors like race and gender. They employed a Generative Adversarial Network (GAN) transformer architecture consisting of three discriminators, one classifier, and one generator to achieve this aim. The objective was to develop a model that would produce less biased data and, as a result, create fairer outcomes.
+To tackle this issue, our team at UC Berkeley embarked on a Capstone Project with the goal of generating synthetic training data that would minimize biases linked to ptorected attributes. Protected attribute are qualities or characteristics that by law, cannot be discriminated against (Ex: race, gender, nationality, etc.)
 
-### Installing
+We built off the existing FairGAN+ model by applying a transformer architecture and multi-class protected attribute support (max 5 classes). The objective was to develop a model that would produce less biased data and, as a result, create fairer outcomes.
 
-Pull down model from GitHub and follow virtual environment set up instructions below. 
+## Setup
+
+Pull the GitHub repo and follow the steps to setup the virtual environment. There are 2 setup options. After properly setting up your virtual environment, you can follow the "Getting Started" code to train the model and generate data. You can also browse to the example Python Jupyter Notebook in the GitHub repo.  
 
 [Visit Project GitHub Repo](https://github.com/tflint-ucb/fair_transformer_GAN){: .btn .btn-purple }
 
-### Docker container (set up option 1 of 3)
+### Option 1: Docker Container 
+
 1. Clone Git repo (fair_transformer_GAN)
 2. Build the docker image
 ```
 docker build -t <image name> -f fair_transformer_GAN/setup/Dockerfile .
 ```
-3. Run jupyter notebook
+3. Run the Jupyter Notebook
 ```
 docker run -p 8888:8888 <docker image name>
 ```
 4. Copy the http jupyter notebook link into browser
 5. Continue running the following "Getting Started" code to train model and generate data. You can also browse to the example python notebook from the Git repo. 
-6. After generating the bias-mitigated data or models, don't forget to save your data to your local machine. You can also download via the Jupyter notebook interface.
+
+Note:
+After generating the data and/or models, save your data to your local machine. You can also download your data to your local machine via the Jupyter Notebook terminal.
 ```
 docker cp my_container:/path/to/*.npy /path/to/local/dir
 ```
 
-7. Once stop your container, don't forget to remove the image and container if no longer in use. 
+Helpful docker commands:
 ```
 # see what containers are active or stopped (exited)
 docker ps -a 
@@ -50,8 +55,11 @@ docker images
 ```
 
 
-### Local (set up option 2 of 3)
-1. Clone Git repo
+### Option 2: Local Development
+
+**Note:** This setup will not work on Macs with M1 processor. This setup works on Linux-based machines, including Mac w/ Intel processor, AWS EC2, AWS SageMaker, AWS SageMaker Studio Lab, GCP, etc.
+
+1. Clone Git repo (fair_transformer_GAN)
 2. Create a pip directory
 ```
 mkdir ~/.pip/
@@ -60,15 +68,13 @@ mkdir ~/.pip/
 ```
 ~/.pip/pip.conf 
 ```
-4. cd into the git repo and run the setup_env.sh script
+4. Run the setup_env.sh script from repo's root directory 
 ```
 source setup/setup_env.sh
 ```
 
-### Google Colab (set up option 3 of 3)
-todo: link to a old distro of code that allowed for transgan called from google colab --- there's a link that can point to a google colab 
 
-### Getting started
+## Getting started
 
 Import necessary dependencies
 
@@ -82,25 +88,23 @@ from src.metrics.metrics import Metrics
 from src.metrics.classifier import Classifier
 ```
 
-Read your data into pandas
+Read in your raw data
 ```
 df = pd.read_csv('data/raw/adult.csv')
 df.head()
 ```
 
-Create a Dataset object, which will return a numpy array that's ready for the model. This will do a couple basic [pre-processing steps] and checks to get the data ready for the model
+Create a Dataset object and pre-process the data. This includes one-hot encoding categorical columns, scaling numeric columns, checking for nulls, etc. The pre-processing function also saves the data to the output file specified. Make sure you have already created all the subfolders in the file path.
 ```
 dataset = Dataset(df)
 # saves processed data to interim/processed folder
 np_input = dataset.pre_process(protected_var='race', 
                                 outcome_var='income', 
-                                # specify path here
                                 output_file_name='data/interim/adult_race_multi', multiclass=True)
 np_input
 ```
 
-If you would like to uplevel your data, please specify the numpy input of your data (if not using the output from our preprocessor), the percentage you would like to uplevel, and the outcome class you would like to balance. Output pickle file created. Upleveling is a 
-technique of modifying a dataset to increase the representation of a particular group or subgroup.
+Upleveling is a technique of modifying a dataset to increase the representation of a particular group or subgroup. If you would like to uplevel your data, please specify the data in numpy format, the percentage you would like to uplevel, and the outcome class you would like to balance. Output pickle file created. 
 ```
 np_upleveled = dataset.uplevel(np_data = np_input, percentage = 2, balanceOutcome = 1,
                                     output_file_name_path='data/interim/adult_race_multi_upleveled')
@@ -118,11 +122,12 @@ p_y = dataset.get_target_distribution()
 p_y
 ```
 
-Initialize the model 
+Specify the path to the input numpy data and the path to save the model. Make sure you have already created all the subfolders in the file paths.
 ```
 input_data_file='data/interim/adult_race_multi.pkl' 
 output_file='output/adult_race_fair_trans_gan/'
 ```
+Initialize the model 
 ```
 fairTransGAN = FairTransformerGAN(dataType='count',
                                     inputDim=np_input.shape[1] - 2,
@@ -157,12 +162,11 @@ fairTransGAN.train(dataPath=input_data_file,
                     p_y = p_y)
 ```
 
-Generate data in the following way
+Generate less-biased data. Specify the path to the trained model file and the path to save the generated data. Make sure you have already created all the subfolders in the file paths.
 
 ```
 # clear any tf variables in current graph
 tf.reset_default_graph()
-
 ```
 
 ```
@@ -174,12 +178,13 @@ fairTransGAN.generateData(nSamples=np_input.shape[0],
                 p_z = p_z,
                 p_y = p_y)
 ```
-Calculate metrics
+
+Load in the orginal data. 
 ```
 orig_data = np.load(input_data_file, allow_pickle = True)
 orig_data.shape
 ```
-
+Concatenate the geenerated z protected attribute data, x data, y outcome data together.
 ```
 output_gen_X = np.load('data/generated/adult_race_fair_trans_gan_GEN/.npy')
 output_gen_Y = np.load('data/generated/adult_race_fair_trans_gan_GEN/_y.npy')
@@ -191,24 +196,25 @@ output_gen
 ```
 
 ```
-# original shape and gen data shape same
+# resize original data to be the same shape as generated data
 orig_data = orig_data[:-42,]
 print(output_gen.shape == orig_data.shape)
 ```
 
 ```
-#convert to df
+# convert numpy objects to df
 gen_df = pd.DataFrame(output_gen)
 orig_df = pd.DataFrame(orig_data)
 ```
 
+Calculate fairness metrics on generated data
 ```
 # metrics evaluating the generated data
 metrics = Metrics()
 metrics.multi_fair_data_generation_metrics(gen_df, orig_df)
 ```
 ```
-# train a classifier using our script (or train your own) and return outputs required to evaluate the classification metrics
+# train a classifier using our logistic regression model (or use your own classifier) and return classification metrics
 TestX, TestY, TestPred = Classifier.logistic_regression(gen_df, orig_df)
 ```
 ```
@@ -216,4 +222,12 @@ TestX, TestY, TestPred = Classifier.logistic_regression(gen_df, orig_df)
 metrics.multi_fair_classification_metrics(TestX, TestY, TestPred)
 ```
 
-[pre-processing steps]: #
+```
+# train a classifier using our random forest model (or use your own classifier) and return classification metrics
+TestX_r, TestY_r, TestPred_r = Classifier.random_forest(gen_df, orig_df)
+```
+```
+# metrics evaluating the classifier trained on the generated data and predicted on the original data
+metrics.multi_fair_classification_metrics(TestX_r, TestY_r, TestPred_r)
+```
+
