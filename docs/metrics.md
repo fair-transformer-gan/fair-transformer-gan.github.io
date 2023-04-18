@@ -122,21 +122,21 @@ Dictionary with the fair data classification metrics.
 
 | Metric       | Formula    | 
 |:-------------|:------------------|
-| Risk Difference | [`RD = P(Y = 1|S = 1) − P(Y = 1|S = 0)`] |
-| Balanced Error Rate | [`BER(f(X), S) = P(f(X) = 0 | S = 1) + P(f(X) = 1 | S = 0) / 2`] |
+| Risk Difference | [`RD = P(Y = 1|Z = 1) − P(Y = 1|Z = 0)`] |
+| Balanced Error Rate | [`BER(f(X), Z) = P(f(X) = 0 | Z = 1) + P(f(X) = 1 | Z = 0) / 2`] |
 
 ### Data Faithfulness (Euclidean Distance) Metrics
 
 | Metric       | Formula    | 
-| Euclidean Distance (with the protected attribute) | [`dist(X, Y, S) = ||Pdata(X, Y, S)−PG(X, Y, S)||`] |
+| Euclidean Distance (with the protected attribute) | [`dist(X, Y, Z) = ||Pdata(X, Y, Z)−PG(X, Y, Z)||`] |
 | Euclidean Distance (without the protected attribute) | [`dist(X, Y) = ||Pdata(X, Y ) − PG(X, Y )||`] |
 
 ### Fair Data Classification Metrics
 
 | Metric       | Formula    | 
-| Demographic Parity | [`RD(η) = P(η(X) = 1|S = 1) − P(η(X) = 1|S = 0)`] |
-| Difference in True Positive Rates | [`P(η(X) = 1|Y =1, S = 1) − P(η(X) = 1|Y = 1, S = 0)`] |
-| Difference in False Positive Rates | [`P(η(X) = 1|Y = 0, S = 1)−P(η(X) = 1|Y = 0, S = 0)`] |
+| Demographic Parity | [`RD(η) = P(η(X) = 1|Z = 1) − P(η(X) = 1|Z = 0)`] |
+| Difference in True Positive Rates | [`P(η(X) = 1|Y =1, Z = 1) − P(η(X) = 1|Y = 1, Z = 0)`] |
+| Difference in False Positive Rates | [`P(η(X) = 1|Y = 0, Z = 1)−P(η(X) = 1|Y = 0, Z = 0)`] |
 
 ### Data Utility Metrics
 

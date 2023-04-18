@@ -11,10 +11,10 @@ A helper class for data pre-processing. Automates steps such as binarizing and s
 
 | Function     | Description      |
 |:-------------|:------------------|
-| [`pre_process`](#datasetdatasetpre_process)| This step is optional and does a couple simple pre-processing check and adjustments, such as scaling, checking for nulls, setting protected and target columns |
-| [`post_process`](#datasetdatasetpost_process) | Run on generated dataset to inverse scaling |
-| [`get_protected_distribution`](#datasetdatasetget_protected_distribution)           | Gets protected variable distribution from the dataset |
-| [`get_target_distribution`](#datasetdatasetget_target_distribution)           | Gets target variable distribution from the dataset |
+| [`pre_process`](#pre_process)| This step is optional and does a couple simple pre-processing check and adjustments, such as scaling, checking for nulls, setting protected and target columns |
+| [`post_process`](#post_process) | Run on generated dataset to inverse scaling |
+| [`get_protected_distribution`](#get_protected_distribution)           | Gets protected variable distribution from the dataset |
+| [`get_target_distribution`](#get_target_distribution)           | Gets target variable distribution from the dataset |
 
 
 ### dataset.Dataset

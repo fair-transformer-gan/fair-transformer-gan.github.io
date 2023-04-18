@@ -55,9 +55,9 @@ docker images
 ```
 
 
-### Option 2: Local Development
+### Option 2: Local/Cloud Development
 
-**Note:** This setup will not work on Macs with M1 processor. This setup works on Linux-based machines, including Mac w/ Intel processor, AWS EC2, AWS SageMaker, AWS SageMaker Studio Lab, GCP, etc.
+**Note:** This setup does not work on Mac laptop with M1 processor. This setup works on other Linux-based machines, including Mac w/ Intel processor, AWS EC2, AWS SageMaker, AWS SageMaker Studio Lab, GCP, etc.
 
 1. Clone Git repo (fair_transformer_GAN)
 2. Create a pip directory
@@ -74,7 +74,7 @@ source setup/setup_env.sh
 ```
 
 
-## Getting started
+## Getting Started
 
 Import necessary dependencies
 
@@ -104,7 +104,7 @@ np_input = dataset.pre_process(protected_var='race',
 np_input
 ```
 
-Upleveling is a technique of modifying a dataset to increase the representation of a particular group or subgroup. If you would like to uplevel your data, please specify the data in numpy format, the percentage you would like to uplevel, and the outcome class you would like to balance. Output pickle file created. 
+Upleveling is the technique of modifying a dataset to increase the representation of a particular group or subgroup. If you would like to uplevel your data, please specify the data in numpy format, the percentage you would like to uplevel, and the outcome class you would like to balance. Output pickle file created. 
 ```
 np_upleveled = dataset.uplevel(np_data = np_input, percentage = 2, balanceOutcome = 1,
                                     output_file_name_path='data/interim/adult_race_multi_upleveled')
@@ -179,12 +179,12 @@ fairTransGAN.generateData(nSamples=np_input.shape[0],
                 p_y = p_y)
 ```
 
-Load in the orginal data. 
+Load in the orginal data 
 ```
 orig_data = np.load(input_data_file, allow_pickle = True)
 orig_data.shape
 ```
-Concatenate the geenerated z protected attribute data, x data, y outcome data together.
+Concatenate the generated z protected attribute data, x data, y outcome data together
 ```
 output_gen_X = np.load('data/generated/adult_race_fair_trans_gan_GEN/.npy')
 output_gen_Y = np.load('data/generated/adult_race_fair_trans_gan_GEN/_y.npy')

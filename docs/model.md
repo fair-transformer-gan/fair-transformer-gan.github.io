@@ -13,7 +13,7 @@ The train folder contains training script that can be run via command line.
 
 | Function     | Description      |
 |:-------------|:------------------|
-| [`loadData`](#loadData)| Load processed data created from Dataset class |
+| [`loadData`](#loaddata)| Load processed data created from Dataset class |
 | [`buildAutoencoder`](#buildautoencoder) | Build autoencoder that encodes the input data |
 | [`buildGenerator`](#buildgenerator) | Build the generator for training |
 | [`buildGeneratorTest`](#buildgeneratortest) | Build the generator when generating new data |
