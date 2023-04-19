@@ -4,17 +4,17 @@ layout: home
 nav_order: 1
 ---
 
-# A Generative Model to Mitigate Bias in data
+# A Generative Model to Mitigate Bias in Data
 
-As AI and machine learning models become more ubiquitous in our daily lives, it is crucial that we scrutinize the datasets used to train them to avoid perpetuating biases. This is particularly important since Machine Learning (ML) models are increasingly being used to make critical decisions that impact people's lives, such as predicting recidivism, medical prioritization, mortgage approvals, and career advancement.
+As artificial intelligence and machine learning models become more ubiquitous in our daily lives, it is crucial that we scrutinize the datasets used to train them to avoid perpetuating biases. This is particularly important since Machine Learning (ML) models are increasingly being used to make critical decisions that impact people's lives, such as predicting recidivism, medical prioritization, mortgage approvals, and career advancement.
 
 To tackle this issue, our team at UC Berkeley embarked on a Capstone Project with the goal of generating synthetic training data that would minimize biases linked to ptorected attributes. Protected attribute are qualities or characteristics that by law, cannot be discriminated against (Ex: race, gender, nationality, etc.)
 
-We built off the existing FairGAN+ model by applying a transformer architecture and multi-class protected attribute support (max 5 classes). The objective was to develop a model that would produce less biased data and, as a result, create fairer outcomes.
+We improved upon the existing FairGAN+ model by applying a transformer architecture and multi-class protected attribute support (max 5 classes). The objective was to develop a model that would produce less biased data, and thus, create fairer outcomes.
 
 ## Setup
 
-Pull the GitHub repo and follow one of the setup steps. After properly setting up your virtual environment, you can follow the [Getting Started](#getting-started) code to train the model and generate data. You can also browse to the example Python Jupyter Notebook in the GitHub repo.  
+Pull the GitHub repo and follow one of the setup options. After properly setting up your virtual environment, you can follow the [Getting Started](#getting-started) code to train the model and generate data. You can also browse to the example Jupyter Notebook in the GitHub repo.  
 
 [Visit Project GitHub Repo](https://github.com/tflint-ucb/fair_transformer_GAN){: .btn .btn-purple }
 
