@@ -7,6 +7,8 @@ nav_order: 3
 
 ### Metrics class
 
+A class that calculates fairness metrics. There are two sets of metrics, fair data generation and fair classification. Fair data generation metrics evaluate the fairness of the generated data. Fair classification metrics evaluate a classifier trained on the generated data and predicted on the original data. There are also different methods depending on if the protected attribute is binary or if there are multiple protected attributes.
+
 | Function     | Description       |
 |:-------------|:------------------|
 | [`binary_fair_data_generation_metrics`](#binary_fair_data_generation_metrics)| This method is used to evaluate the fairness of the generated/synthetic data. This method calculates the following fairness metrics: Risk Difference (RD) and Balanced Error Rate (BER). RD is the difference in the probability of the positive outcomes between two protected groups and is meant to capture disparate treatment. BER is the average error rate of predicting the protected attribute using X features and is meant to capture disparate impact. |
