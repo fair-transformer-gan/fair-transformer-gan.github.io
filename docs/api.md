@@ -7,4 +7,4 @@ has_children: true
 
 ## API
 
-### This is a description of the API
+Reference the documentation for each of the following classes in our API.

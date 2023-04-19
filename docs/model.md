@@ -41,7 +41,7 @@ The train folder contains the script to train the model via the command line.
 > `FairTransformerGAN`()
 
 
-### __init__
+### init
 {: .note-title }
 > Method
 >
@@ -497,7 +497,7 @@ Transformer multi-head self attention block that is used in generator of FairTra
 
 | Function     | Description      |
 |:-------------|:------------------|
-| [`init`](#init)| Intializes instance of MultiHeadSelfAttention class |
+| [`init`](#init )| Intializes instance of MultiHeadSelfAttention class |
 | [`call`](#call) | Calculates the attention of the inputted data |
 
 
@@ -508,7 +508,7 @@ Transformer multi-head self attention block that is used in generator of FairTra
 > `MultiHeadSelfAttention`()
 
 
-### init
+### init 
 {: .note-title }
 > Method
 >
