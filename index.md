@@ -10,7 +10,7 @@ As artificial intelligence and machine learning models become more ubiquitous in
 
 To tackle this issue, our team at UC Berkeley embarked on a Capstone Project with the goal of generating synthetic training data that would minimize biases linked to ptorected attributes. Protected attribute are qualities or characteristics that by law, cannot be discriminated against (Ex: race, gender, nationality, etc.)
 
-We improved upon the existing FairGAN+ model by applying a transformer architecture and multi-class protected attribute support (max 5 classes). The objective was to develop a model that would produce less biased data, and thus, create fairer outcomes.
+We improved upon the existing [FairGAN+] model by applying a transformer architecture and multi-class protected attribute support (max 5 classes). The objective was to develop a model that would produce less biased data, and thus, create fairer outcomes.
 
 ## Setup
 
@@ -72,9 +72,6 @@ docker images
 docker rmi <images id>
 docker images
 ```
-
-
-
 
 
 ## Getting Started
@@ -240,3 +237,5 @@ metrics.multi_fair_classification_metrics(TestX_r, TestY_r, TestPred_r)
 # calculate euclidean distance metric
 metrics.euclidean_distance(gen_df, orig_df)
 ```
+
+[FairGAN+]: https://ieeexplore.ieee.org/abstract/document/9006322?casa_token=rtdWVzSgLKoAAAAA:AMi_jcLYpcU-evETPjOU7z-NF7W6NVOBczeq01sPpEIzl8V_XcwMYeTqabxFM2AOwCYt2VA
