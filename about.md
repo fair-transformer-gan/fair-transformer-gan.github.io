@@ -23,9 +23,6 @@ We integrated a transformer into the original generator architecture to capture 
 
 {: .highlight }
 ### Aknowledgements
-We would like to acknowledge the influential work of Depeng Xu, Shuhan Yuan, Lu Zhang, and Xintao Wu from the University of Arkansas, whose research on [FairGAN+: Achieving Fair Data Generation and Classification through Generative Adversarial Nets] greatly influenced our project.
-
-
-[FairGAN+: Achieving Fair Data Generation and Classification through Generative Adversarial Nets]: https://ieeexplore.ieee.org/abstract/document/9006322?casa_token=rtdWVzSgLKoAAAAA:AMi_jcLYpcU-evETPjOU7z-NF7W6NVOBczeq01sPpEIzl8V_XcwMYeTqabxFM2AOwCYt2VA
+We would like to acknowledge the influential work of Depeng Xu, Shuhan Yuan, Lu Zhang, and Xintao Wu from the University of Arkansas, whose research on [FairGAN+] greatly influenced our project.
 
 [FairGAN+]: https://ieeexplore.ieee.org/abstract/document/9006322?casa_token=rtdWVzSgLKoAAAAA:AMi_jcLYpcU-evETPjOU7z-NF7W6NVOBczeq01sPpEIzl8V_XcwMYeTqabxFM2AOwCYt2VA
