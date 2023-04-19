@@ -21,7 +21,7 @@ Pull the GitHub repo and follow one of the setup steps. After properly setting u
 
 ### Option 1: Local/Cloud Development
 
-**Note:** This setup does not work on Mac laptop with M1 processor. This setup works on other Linux-based machines, including Mac w/ Intel processor, AWS EC2, AWS SageMaker, AWS SageMaker Studio Lab, GCP, etc.
+**Note:** This setup does not work locally on Mac laptop with M1 processor. This setup works on other Linux-based machines, including Mac w/ Intel processor, AWS EC2, AWS SageMaker, AWS SageMaker Studio Lab, GCP, etc.
 
 1. Clone Git repo (fair_transformer_GAN)
 2. Create a pip directory
