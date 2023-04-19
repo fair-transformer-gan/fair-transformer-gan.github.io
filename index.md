@@ -18,7 +18,26 @@ Pull the GitHub repo and follow one of the setup steps. After properly setting u
 
 [Visit Project GitHub Repo](https://github.com/tflint-ucb/fair_transformer_GAN){: .btn .btn-purple }
 
-### Option 1: Docker Container 
+
+### Option 1: Local/Cloud Development
+
+**Note:** This setup does not work on Mac laptop with M1 processor. This setup works on other Linux-based machines, including Mac w/ Intel processor, AWS EC2, AWS SageMaker, AWS SageMaker Studio Lab, GCP, etc.
+
+1. Clone Git repo (fair_transformer_GAN)
+2. Create a pip directory
+```
+mkdir ~/.pip/
+```
+3. Create an empty pip.conf file in that directory
+```
+~/.pip/pip.conf 
+```
+4. Run the setup_env.sh script from repo's root directory 
+```
+source setup/setup_env.sh
+```
+
+### Option 2: Docker Container 
 
 1. Clone Git repo (fair_transformer_GAN)
 2. Build the docker image
@@ -55,23 +74,7 @@ docker images
 ```
 
 
-### Option 2: Local/Cloud Development
 
-**Note:** This setup does not work on Mac laptop with M1 processor. This setup works on other Linux-based machines, including Mac w/ Intel processor, AWS EC2, AWS SageMaker, AWS SageMaker Studio Lab, GCP, etc.
-
-1. Clone Git repo (fair_transformer_GAN)
-2. Create a pip directory
-```
-mkdir ~/.pip/
-```
-3. Create an empty pip.conf file in that directory
-```
-~/.pip/pip.conf 
-```
-4. Run the setup_env.sh script from repo's root directory 
-```
-source setup/setup_env.sh
-```
 
 
 ## Getting Started

@@ -24,7 +24,7 @@ A helper class for data pre-processing. Automates steps such as binarizing and s
 >
 > `Dataset`()
 
-### __init__
+### init
 {: .note-title }
 > Method
 >
@@ -34,13 +34,13 @@ Initializes dataset class using Pandas Dataframe.
 
 {: .important-title }
 > Parameters
-> 
-> - **dataframe** [Pandas DataFrame]: Training data before pre-processing
-> - **scaler** [sklearn.preprocessing.MinMaxScaler]: initialize the MinMaxScaler object that will be used to scale data in pre-processing and post-processing
-> - **np_data** [numpy.ndarray]: Processed data in a Numpy array
-> - **target_names** List[str]: Target variable column names
-> - **protected_names** List[str]: Protected variable column names
-> - **processed_col_types** List[str]: store list for the original dataset column types, used in post-processing
+
+- **dataframe** [Pandas DataFrame]: Training data before pre-processing
+- **scaler** [sklearn.preprocessing.MinMaxScaler]: initialize the MinMaxScaler object that will be used to scale data in pre-processing and post-processing
+- **np_data** [numpy.ndarray]: Processed data in a Numpy array
+- **target_names** List[str]: Target variable column names
+- **protected_names** List[str]: Protected variable column names
+- **processed_col_types** List[str]: store list for the original dataset column types, used in post-processing
 
 
 {: .important-title }
@@ -53,16 +53,17 @@ Initializes dataset class using Pandas Dataframe.
 {: .note-title }
 > Method
 >
-> `pre_process(protected_col_name, y_col_name, output_file_name, multiclass=False, min_max_scale=True)`
+> `pre_process(protected_var, outcome_var, output_file_name_path, multiclass=False, min_max_scale=True)`
 
-Basic pre-processing on a Pandas DataFrame.
+Basic pre-processing on a Pandas DataFrame including one-hot encoding, scaling, checking for nulls, etc. Saves a pickle file with a numpy array and a csv file with a data dictionary in the specified path.
+
 
 {: .important-title }
 > Parameters
 
-- **protected_col_name** [str] - Name of the protected column in the Pandas DataFrame
-- **y_col_name** [str] - Name of the target column in the Pandas DataFrame
-- **output_file_name** [str] - Name the Pickle file that will be saved in the data/interim folder
+- **protected_var** [str] - Name of the protected column in the Pandas DataFrame
+- **outcome_var** [str] - Name of the outcome column in the Pandas DataFrame
+- **output_file_name_path** [str] - Name the Pickle file that will be saved in the data/interim folder
 - **multiclass** (Optional [bool]) - Set to True if your protected variable is categorical has more than two states.
 - **min_max_scale** (Optional [bool]) - Set to False if using scaled data
 
@@ -74,9 +75,8 @@ Basic pre-processing on a Pandas DataFrame.
 {: .important-title }
 > Return type
 
-Numpy array with pre-processed data
+- **np_data** [numpy.ndarray]: numpy array with pre-processed data
 
-Saves a pickle file with a numpy array and a CSV data dictionary in a provided directory.
 
 ### post_process
 {: .note-title }
@@ -84,17 +84,18 @@ Saves a pickle file with a numpy array and a CSV data dictionary in a provided d
 >
 > `post_process(gen_data_np)`
 
-Inverse scaling on the generated dataset.
+Inverse scaling on the generated data from the trained model.
 
 {: .important-title }
 > Parameters
 
-- **gen_data_np** [np.ndarray] - Numpy array with generated data.
+- **gen_data_np** [np.ndarray] - numpy array with generated data
 
 {: .important-title }
 > Return type
 
-Numpy array with post-processed data
+- **gen_data_np** [numpy.ndarray]: numpy array with post-processed data
+
 
 ### get_protected_distribution
 {: .note-title }
@@ -102,7 +103,7 @@ Numpy array with post-processed data
 >
 > `get_protected_distribution(np_data)`
 
-Returns the protected variable distribution after pre-processing. 
+Calculates the protected variable distribution after pre-processing. 
 
 {: .important-title }
 > Parameters

@@ -17,7 +17,7 @@ A Generative Adversarial Network (GAN) consists of a 2 neural networks, a genera
 As seen in the diagram below, there are 3 discriminators in our model - 1 of them focuses on generated data integrity (D1) and 2 of them focus on generated data fairness (D2, D3).
 
 ### Transformer
-We integrated a transformer into the original generator architecture to capture the collinearity relationship between the features, outcome variable, and protected attribute. The attention mechanism is applied to the output of the FairGAN+ generator encoder to generate contextualized embeddings. These embeddings are then fed into the [FairGAN+] generator decoder to produce continuous-value synthetic data.
+We integrated a transformer into the original generator architecture to capture the collinearity relationship between the features, outcome variable, and protected attribute. The attention mechanism is applied to the output of the FairGAN+ generator encoder to generate contextualized vectors. These vectors are then fed into the [FairGAN+] generator decoder to produce synthetic data.
 
 ![](fair_trans_gan_architecture.png)
 
