@@ -117,12 +117,12 @@ np_upleveled = dataset.uplevel(np_data = np_input, percentage = 2, balanceOutcom
 Get the distribution of protected attribute and the outcome variable
 ```
 # get distribution of protected attribute race
-p_z = dataset.get_protected_distribution()
+p_z = dataset.get_protected_distribution(np_upleveled)
 p_z
 ```
 ```
 # get distribution of outcome variable
-p_y = dataset.get_target_distribution()
+p_y = dataset.get_target_distribution(np_upleveled)
 p_y
 ```
 
