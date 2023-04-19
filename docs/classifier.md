@@ -23,6 +23,19 @@ Note: Users do not have to use this class and can train their own classifiers.
 >
 > `Classifier`()
 
+### init
+{: .note-title }
+> Method
+>
+> `__init__(dataType='binary',inputDim=58,embeddingDim=32)`
+
+Initializes classifier with the following parameters
+
+{: .important-title }
+> Parameters
+
+- **test_size** [float]: test size for train_test_split
+- **random_seed** [int]: random seed for consistent metrics
 
 ### logistic_regression
 {: .note-title }
@@ -41,7 +54,9 @@ Fit a logistic regression model on df and predict on df_real. Split df_real into
 {: .important-title }
 > Return type
 
-Returns real x data from df_real, real y data from df_real, and the predicted y data from the logistic regression model predictions. Can be fed into the fair classification method from the Metrics() class.
+- **X_real** [df]: Returns real x data from df_real. Can be fed into the fair classification method from the Metrics() class.
+- **y_real** [np.array]: Returns real y data from df_real. Can be fed into the fair classification method from the Metrics() class.
+- **y_pred** [np.array]: Returns the predicted y data from the logistic regression model predictions. Can be fed into the fair classification method from the Metrics() class.
 
 ### random_forest
 {: .note-title }
@@ -60,4 +75,6 @@ Fit a random forest model on df and predict on df_real. Split df_real into X dat
 {: .important-title }
 > Return type
 
-Returns real x data from df_real, real y data from df_real, and the predicted y data from the random forest model predictions. Can be fed into the fair classification method from the Metrics() class.
+- **X_real** [df]: Returns real x data from df_real. Can be fed into the fair classification method from the Metrics() class.
+- **y_real** [np.array]: Returns real y data from df_real. Can be fed into the fair classification method from the Metrics() class.
+- **y_pred** [np.array]: Returns the predicted y data from the random forest model predictions. Can be fed into the fair classification method from the Metrics() class.

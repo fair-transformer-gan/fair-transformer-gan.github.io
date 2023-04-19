@@ -24,6 +24,13 @@ A class that calculates fairness metrics. There are two sets of metrics, fair da
 >
 > `Metrics`()
 
+### init
+{: .note-title }
+> Method
+>
+> `__init__()`
+
+Initializes Metrics class to True
 
 ### binary_fair_data_generation_metrics
 {: .note-title }
@@ -41,7 +48,7 @@ Calculate fair data generation metrics for binary protected attributes.
 {: .important-title }
 > Return type
 
-Dictionary with the fair data generation metrics.
+**metrics_dict** [dict]: Dictionary with the fair data generation metrics.
 
 ### multi_fair_data_generation_metrics
 {: .note-title }
@@ -59,7 +66,7 @@ Calculate fair data generation metrics for multiple protected attributes.
 {: .important-title }
 > Return type
 
-Dictionary with the fair data generation metrics.
+**metrics_dict** [dict]: Dictionary with the fair data generation metrics.
 
 ### euclidean_distance
 {: .note-title }
@@ -78,7 +85,7 @@ Calculate euclidean distance of joint probability distributions between two data
 {: .important-title }
 > Return type
 
-Dictionary with the distance metrics.
+**metrics_dict** [dict]: Dictionary with the distance metrics.
 
 ### binary_fair_classification_metrics
 {: .note-title }
@@ -98,7 +105,7 @@ Calculate fair data classification metrics for binary protected attributes.
 {: .important-title }
 > Return type
 
-Dictionary with the fair data classification metrics.
+**metrics_dict** [dict]: Dictionary with the fair data classification metrics.
 
 ### multi_fair_classification_metrics
 {: .note-title }
@@ -118,7 +125,7 @@ Calculate fair data classification metrics for multiple protected attributes.
 {: .important-title }
 > Return type
 
-Dictionary with the fair data classification metrics.
+**metrics_dict** [dict]: Dictionary with the fair data classification metrics.
 
 ### Fair Data Generation Metrics
 
