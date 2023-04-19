@@ -109,7 +109,7 @@ Calculates the protected variable distribution after pre-processing.
 {: .important-title }
 > Parameters
 
-`None`
+- **np_data** [np.ndarray] - data in a numpy array
 
 {: .important-title }
 > Return type
@@ -144,7 +144,7 @@ Returns the target variable distribution after pre-processing.
 {: .important-title }
 > Parameters
 
-`None`
+- **np_data** [np.ndarray] - data in a numpy array
 
 {: .important-title }
 > Return type
