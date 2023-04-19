@@ -9,6 +9,8 @@ nav_order: 4
 
 A class that trains a basic logistic regression or random forest model (as used in our testing) and returns the inputs required for the fair classification metrics method.
 
+Note: Users do not have to use this class and can train their own classifiers.
+
 | Function     | Description       |
 |:-------------|:------------------|
 | [`logistic_regression`](#logistic_regression)| Trains a logistic regression model and returns real X data, real y data, and the predicted y data. |
