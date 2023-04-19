@@ -13,7 +13,6 @@ The train folder contains the script to train the model via the command line.
 
 | Function     | Description      |
 |:-------------|:------------------|
-
 | [`init`](#init)| Intializes instance of FairTransformerGAN class |
 | [`loadData`](#loaddata)| Load processed data created from Dataset class |
 | [`buildAutoencoder`](#buildautoencoder) | Build autoencoder that encodes the input data |
