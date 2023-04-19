@@ -9,10 +9,12 @@ nav_order: 2
 
 A class that defines the Fair Transformer GAN model. Processed data from the Dataset object is passed to the Model object, which trains the model and generates less-biased data. The Metrics object then uses this generated data to calculate model performance. 
 
-The train folder contains training script that can be run via command line.
+The train folder contains the script to train the model via the command line.
 
 | Function     | Description      |
 |:-------------|:------------------|
+
+| [`init`](#init)| Intializes instance of FairTransformerGAN class |
 | [`loadData`](#loaddata)| Load processed data created from Dataset class |
 | [`buildAutoencoder`](#buildautoencoder) | Build autoencoder that encodes the input data |
 | [`buildGenerator`](#buildgenerator) | Build the generator for training |
@@ -471,7 +473,7 @@ Train the Fair Transformer GAN model and save it to the output path specified.
 
 - **dataPath** [str]: path to input dataset 
 - **modelPath** [str]: path to existing model, if it exists
-- **outPath** [str: path to store model output and logs
+- **outPath** [str]: path to store model output and logs
 - **nEpochs** [int]: number of epochs to train the model
 - **discriminatorTrainPeriod** [int]: number of periods to train the discriminator per batch per epoch 
 - **generatorTrainPeriod** [int]: number of periods to train the generator per batch per epoch
@@ -486,3 +488,67 @@ Train the Fair Transformer GAN model and save it to the output path specified.
 > Return type
 
 `None`
+
+
+
+### MultiHeadSelfAttention class
+
+Transformer multi-head self attention block that is used in generator of FairTransformerGAN. Used by  [`buildGenerator`](#buildgenerator) and [`buildGeneratorTest`](#buildgeneratortest) of FairTransformerGAN class.ßß
+
+
+| Function     | Description      |
+|:-------------|:------------------|
+| [`init`](#init)| Intializes instance of MultiHeadSelfAttention class |
+| [`call`](#call) | Calculates the attention of the inputted data |
+
+
+### MultiHeadSelfAttention
+{: .note-title }
+> CLASS
+>
+> `MultiHeadSelfAttention`()
+
+
+### init
+{: .note-title }
+> Method
+>
+> `__init__(num_heads, input_dim, dropout_rate=0.0)`
+
+Initializes multi-head self-attention block.
+
+{: .important-title }
+> Parameters
+
+- **num_heads** [int]: number of heads of self-attention
+- **input_dim** [int]: size of input layer
+- **dropout_rate** [float]: proportion of neurons to drop in a layer
+
+
+
+{: .important-title }
+> Return type
+
+`None`
+
+
+
+### call
+{: .note-title }
+> Method
+>
+> `call(inputs, mask=None, training=None)`
+
+Calculates the mult-head self-attention of the inputs
+
+{: .important-title }
+> Parameters
+
+- **inputs** [tf.Tensor]: input layer
+- **mask** [tf.Tensor]: mask layer
+- **training** [bool]: whether we should add dropout during attention calculation
+
+{: .important-title }
+> Return type
+
+- **attention_output** [tf.Tensor]: self-attention block resized back to input dimension

@@ -11,6 +11,7 @@ A helper class for data pre-processing. Automates steps such as binarizing and s
 
 | Function     | Description      |
 |:-------------|:------------------|
+| [`init`](#init)| Intializes instance of Dataset class |
 | [`pre_process`](#pre_process)| This step is optional and does a couple simple pre-processing check and adjustments, such as scaling, checking for nulls, setting protected and target columns |
 | [`post_process`](#post_process) | Run on generated dataset to inverse scaling |
 | [`get_protected_distribution`](#get_protected_distribution)           | Gets protected variable distribution from the dataset |
@@ -30,7 +31,7 @@ A helper class for data pre-processing. Automates steps such as binarizing and s
 >
 
 `__init__(dataframe)`
-Initializes dataset class using Pandas Dataframe.
+Initializes dataset class given a Pandas Dataframe.
 
 {: .important-title }
 > Parameters
