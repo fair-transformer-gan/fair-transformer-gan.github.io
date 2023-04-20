@@ -114,15 +114,15 @@ Calculates the protected variable distribution after pre-processing.
 {: .important-title }
 > Return type
 
-`List[float]` - distrbution of each protected class
+- **protected_distribution** [List[float]]: distrbution of each protected class
 
 To get the dataframe columns corresponding to class names, run `protected_names` on the Dataset object. For example
 
 ```
 dataset = Dataset()
-dataset.pre_process(df, 'gender', 'income', 'out_file')
+np_data = dataset.pre_process(df, 'gender', 'income', 'out_file')
 
-dataset.get_protected_distribution()
+dataset.get_protected_distribution(np_data)
 
 >>> [85.6, 14.4]
 
@@ -149,9 +149,11 @@ Returns the target variable distribution after pre-processing.
 {: .important-title }
 > Return type
 
-`List[float]` - distrbution of each target class
+- **target_distribution** [List[float]]: distrbution of each target class
 
-To get the dataframe columns corresponding to class names, return `target_names` on the Dataset object.
+
+{: .note }
+> To get the dataframe columns corresponding to class names, return `target_names` on the Dataset object.
 
 
 ### uplevel
@@ -176,4 +178,4 @@ Returns upleveled Pandas Dataframe
 {: .important-title }
 > Return type
 
-`Padnas.Dataframe` - data with upleveling applied
+- **upleveled_df** [Padnas.Dataframe]: data with upleveling applied
