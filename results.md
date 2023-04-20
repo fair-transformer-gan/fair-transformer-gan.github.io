@@ -29,11 +29,11 @@ A high level overview of results from our experiments. In general, we find there
 ![](/images/rf_results.png)
 
 ## Upleveling
-**Purpose:** How accurate is the classifier when trained on generated data and predicted on original data?
+**Purpose:** Technique of randomly increasing the outcome for the non-dominant classes to be similar to dominant class’s outcome.
 
 **Uses:** Upleveling is used for specific cases where it's important not to compromise any user group (e.g. healthcare).
 
-**Key Takeaway:** Insignificant increase in fairness (15% of minority upleveled), increases outcomes for everyone overall rather than down-leveling the original dominant class (as much), but lower utility (expected as uplevel creates more false positive)
+**Key Takeaway:** Insignificant increase in fairness (15% of minority upleveled), increases outcomes for everyone overall rather than down-leveling the original dominant class (as much), but lower utility (expected as uplevel creates more false positive).
 
 
 ![](/images/uplevel_results.png)
