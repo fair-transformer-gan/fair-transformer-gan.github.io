@@ -120,7 +120,7 @@ To get the dataframe columns corresponding to class names, run `protected_names`
 
 ```
 dataset = Dataset()
-dataset.pre_process(df, 'gender', 'income', 'out_file')
+np_data = dataset.pre_process(df, 'gender', 'income', 'out_file')
 
 dataset.get_protected_distribution(np_data)
 
