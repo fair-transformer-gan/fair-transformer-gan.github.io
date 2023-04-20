@@ -22,7 +22,7 @@ A high level overview of results from our experiments. In general, we find there
 ![](/images/lr_results.png)
 
 ## Utility Performance: Random Forest
-**Purpose:** Technique of randomly increasing the outcome for the non-dominant classes to be similar to dominant class’s outcome.
+**Purpose:** How accurate is the classifier when trained on generated data and predicted on original data?
 
 **Takeaway:**  Fair Transformer GAN’s generated data has comparable / lower F1 than original or SOTA generated data (expected with a higher BER).
 
