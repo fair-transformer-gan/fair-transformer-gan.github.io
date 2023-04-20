@@ -9,6 +9,9 @@ nav_order: 1
 
 A helper class for data pre-processing. Automates steps such as binarizing and scaling data, placing target and protected class in the right position, checks for nulls and allowed column types.
 
+{: .important }
+> This is an optional step, if passing pre-processed data into the (Model)[/docs/model.html] class make sure to place the protected variable column first and target variable column last.
+
 | Function     | Description      |
 |:-------------|:------------------|
 | [`init`](#init)| Intializes instance of Dataset class |
