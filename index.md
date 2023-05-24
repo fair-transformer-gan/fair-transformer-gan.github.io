@@ -214,7 +214,8 @@ metrics.multi_fair_data_generation_metrics(gen_df)
 ```
 ```
 # train a classifier using our logistic regression model (or use your own classifier) and return classification metrics
-TestX, TestY, TestPred = Classifier.logistic_regression(gen_df, orig_df)
+classifier = Classifier()
+TestX, TestY, TestPred = classifier.logistic_regression(gen_df, orig_df)
 ```
 ```
 # metrics evaluating the classifier trained on the generated data and predicted on the original data
@@ -222,7 +223,7 @@ metrics.multi_fair_classification_metrics(TestX, TestY, TestPred)
 ```
 ```
 # train a classifier using our random forest model (or use your own classifier) and return classification metrics
-TestX_r, TestY_r, TestPred_r = Classifier.random_forest(gen_df, orig_df)
+TestX_r, TestY_r, TestPred_r = classifier.random_forest(gen_df, orig_df)
 ```
 ```
 # metrics evaluating the classifier trained on the generated data and predicted on the original data
