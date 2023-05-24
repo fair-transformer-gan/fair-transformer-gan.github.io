@@ -12,20 +12,20 @@ A high level overview of results from our experiments. In general, we find there
 
 **Takeaway:**  Fair Transformer GAN’s generated data has statistically significant fairness improvements over SOTA generated and/or original data on most datasets.
 
-![](/images/ber_results.png)
+![](/images/fairness_metric_ACCESSIBLE_viz.png)
 
 ## Utility Performance: Logistic Regression
 **Purpose:** How accurate is the classifier when trained on generated data and predicted on original data?
 
 **Takeaway:**  Fair Transformer GAN’s generated data results in lower F1 than original data (expected with a higher BER) and comparable F1 to SOTA generated data.
 
-![](/images/lr_results.png)
+![](/images/log_reg_f1_metric_ACCESSIBLE_viz.png)
 
 ## Utility Performance: Random Forest
 **Purpose:** How accurate is the classifier when trained on generated data and predicted on original data?
 
 **Takeaway:**  Fair Transformer GAN’s generated data has comparable / lower F1 than original or SOTA generated data (expected with a higher BER).
 
-![](/images/rf_results.png)
+![](/images/random_forest_f1_ACCESSIBLE_viz.png)
 
 
