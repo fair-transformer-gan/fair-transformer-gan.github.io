@@ -108,21 +108,16 @@ np_input
 {: .note }
 The steps above are **Optional** feel free to pre-process your own data and save a pickled numpy array for the model. See [Dataset](/docs/dataset.html) class API for more details.
 
-Upleveling is the technique of modifying a dataset to increase the representation of a particular group or subgroup. If you would like to uplevel your data, please specify the data in numpy format, the percentage you would like to uplevel, and the outcome class you would like to balance. Output pickle file created. 
-```
-np_upleveled = dataset.uplevel(np_data = np_input, percentage = 2, balanceOutcome = 1,
-                                    output_file_name_path='data/interim/adult_race_multi_upleveled')
-```
 
 Get the distribution of protected attribute and the outcome variable
 ```
 # get distribution of protected attribute race
-p_z = dataset.get_protected_distribution(np_upleveled)
+p_z = dataset.get_protected_distribution(np_input)
 p_z
 ```
 ```
 # get distribution of outcome variable
-p_y = dataset.get_target_distribution(np_upleveled)
+p_y = dataset.get_target_distribution(np_input)
 p_y
 ```
 
